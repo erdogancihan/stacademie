@@ -1,0 +1,296 @@
+.showtime {
+  position: relative;
+  height: 70vh;
+  max-width: 1200px;
+  padding: 0 0;
+  margin: auto;
+  margin-top: 3em;
+  #leftArrow {
+    z-index: 20;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    margin-left: 20px;
+    font-size: 70px;
+    color: $text-color-white;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+      opacity: 0.8;
+      transition: all 300ms ease-in-out;
+    }
+  }
+  #rightArrow {
+    z-index: 20;
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    margin-right: 20px;
+    font-size: 70px;
+    color: $text-color-white;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+      opacity: 0.8;
+      transition: all 300ms ease-in-out;
+    }
+  }
+}
+.slide {
+  overflow: hidden;
+  position: relative;
+  height: 70vh;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .showtimeText {
+    z-index: 1;
+    position: absolute;
+    top: 35%;
+    margin-left: 100px;
+    width: 300px;
+  }
+  h1 {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    color: $text-color-white;
+    font-weight: 500;
+    transition: all 1s;
+  }
+  p {
+    text-transform: capitalize;
+    font-size: 1em;
+    color: $text-color-white;
+    font-weight: 400;
+  }
+}
+
+/* starting ENTER animation */
+.slide-left-enter {
+  position: absolute;
+  transform: translateX(100%);
+}
+
+/* ending ENTER animation */
+.slide-left-enter-active {
+  transform: translateX(0%);
+  transition: all 1000ms ease-in-out;
+}
+
+/* starting EXIT animation */
+.slide-left-exit {
+  transform: translateX(0%);
+}
+
+/* ending EXIT animation */
+.slide-left-exit-active {
+  transform: translateX(-100%);
+  transition: all 1000ms ease-in-out;
+}
+
+/* starting ENTER animation */
+.slide-right-enter {
+  position: absolute;
+  transform: translateX(-100%);
+}
+
+/* ending ENTER animation */
+.slide-right-enter-active {
+  transform: translateX(0%);
+  transition: all 1000ms ease-in-out;
+}
+
+/* starting EXIT animation */
+.slide-right-exit {
+  transform: translateX(0%);
+}
+
+/* ending EXIT animation */
+.slide-right-exit-active {
+  transform: translateX(100%);
+  transition: all 1000ms ease-in-out;
+}
+
+/* starting ENTER animation */
+.showtimeText-enter {
+  position: absolute;
+  opacity: 0;
+}
+
+/* ending ENTER animation */
+.showtimeText-enter-active {
+  opacity: 1;
+  transition: all 1500ms ease-in-out;
+}
+
+/* starting EXIT animation */
+.showtimeText-exit {
+  opacity: 0;
+}
+
+/* ending EXIT animation */
+.showtimeText-exit-active {
+  opacity: 0;
+  transition: all 1000ms ease-in-out;
+}
+
+.container {
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  padding: 0 0;
+  margin: auto;
+  margin-top: 3em;
+  //background: $body-bg;
+  .picture {
+    overflow: hidden;
+    max-width: 50%;
+    margin: 1em 1.5em;
+    img {
+      width: 100%;
+      &:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+        transition: all 2000ms ease-in-out;
+      }
+    }
+  }
+  .content {
+    flex-basis: 70%;
+    margin: 1em;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: $secondary-text-color;
+  }
+  h2 {
+    margin-bottom: 1.5em;
+    color: $secondary-text-color;
+  }
+  h3 {
+    margin-bottom: 1em;
+    color: $secondary-text-color;
+  }
+  p {
+    margin-bottom: 1em;
+    color: $primary-text-color;
+    line-height: 1.5em;
+    text-align: justify;
+  }
+  li {
+    padding-bottom: 0.5em;
+  }
+}
+
+.courses {
+  background: url("https://firebasestorage.googleapis.com/v0/b/stacademie.appspot.com/o/images%2Fcourses-background.jpg?alt=media&token=6664a7f4-54ac-4ff7-b994-4223713ae06f");
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  flex-basis: 180px;
+  .module {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    width: 180px;
+    height: 180px;
+    border: 1px solid yellow;
+    margin: 1.5em;
+    background: orange;
+    &:hover {
+      transform: scale(1.1);
+      transition: all 300ms ease-in-out;
+    }
+  }
+  h3 {
+    z-index: 1;
+    text-align: center;
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    font-weight: 400;
+    width: 100%;
+  }
+  a {
+    color: $text-color-white;
+  }
+}
+.editcontainer {
+  border: 1px solid $form-border-color;
+  border-radius: 15px;
+  margin: 1em;
+  h2 {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .slide {
+    .showtimeText {
+      top: 40%;
+    }
+  }
+}
+@media only screen and (max-width: 740px) {
+  .showtime {
+    position: relative;
+    height: 50vh;
+  }
+  .slide {
+    height: 50vh;
+    .showtimeText {
+      top: 30%;
+    }
+    image {
+      width: 150%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 1.6em;
+      width: 250px;
+    }
+    p {
+      display: none;
+    }
+  }
+  .container {
+    flex-wrap: wrap;
+    .content {
+      flex-basis: 100%;
+      margin: 0.5em;
+    }
+
+    .picture {
+      max-width: 70%;
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .showtime {
+    height: 35vh;
+  }
+  .slide {
+    height: 35vh;
+    .showtimeText {
+      top: 20%;
+      margin-left: 20px;
+    }
+    image {
+      max-width: 400%;
+      height: auto;
+    }
+    h1 {
+      font-size: 1.2em;
+    }
+  }
+}
