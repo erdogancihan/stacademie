@@ -2,7 +2,7 @@ import React from "react";
 import CKEditor from "react-ckeditor-component";
 
 function Editor(props) {
-  console.log(props.content);
+ // console.log(props.content);
 
   return (
     <div className="editcontainer">
@@ -11,12 +11,13 @@ function Editor(props) {
         <label
           className=" custom-file-upload"
           htmlFor={props.collection + props.index}
+          name={props.index}
         >
           Resim Seç
           <input
             type="file"
             id={props.collection + props.index}
-            name={props.collection + props.index}
+            name={props.index}
             aria-describedby={props.collection + props.index}
             onChange={props.handleFileSelect}
           />
@@ -27,10 +28,11 @@ function Editor(props) {
               className="custom-file-upload"
               href={props.content.img}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Mevcut Resmi Göster
             </a>
-            <label className=" custom-file-upload" htmlFor="file5">
+            <label className=" custom-file-upload" data-name={props.content.img} data-index={props.index} htmlFor="file5" onClick={props.removeImage}>
               Resmi Sil
             </label>
           </React.Fragment>

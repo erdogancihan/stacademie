@@ -220,7 +220,7 @@ class Home extends Component {
   };
   render() {
     const classNames = this.state.slideDirection;
-    const { strings } = this.props;
+    const { strings,lang } = this.props;
 
     return (
       <section>
@@ -312,7 +312,7 @@ class Home extends Component {
                 />
               </div>
             </section>
-            <Courses strings={strings} />
+            <Courses strings={strings} lang={lang} />
             <section>
               <div className="container ">
                 <div className="picture">

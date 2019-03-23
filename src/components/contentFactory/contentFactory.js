@@ -53,26 +53,62 @@ class ContentFactory extends Component {
     });
   }
 
-  getImage = (name, index) => {
+  getImage = (name, id) => {
     const { firebase } = this.context.store;
     const storage = firebase.storage();
     let storageRef = storage.ref();
     let imagesRef = storageRef.child("images/" + name + ".jpg");
+    id = parseInt(id);
     imagesRef
       .getDownloadURL()
       .then(url => {
-        let newContent = this.state.contents[index];
-        newContent["img"] = url;
-        console.log(index);
-        this.setState({
-          [this.state.contents[index]]: newContent
-        });
+        this.setState(
+          {
+            contents: this.state.contents.map((item, index) => {
+              console.log(id, " ve ", index);
+              return id !== index ? item : { ...item, img: url };
+            })
+          },
+          () => {
+            console.log(this.state);
+            this.dbAdd();
+          }
+        );
       })
       .catch(err => {
         console.log(err);
         this.setState({
-          [this.state.contents[index]]: ""
+          [this.state.contents[id]]: ""
         });
+      });
+  };
+
+  removeImage = e => {
+    e.persist();
+    const name = e.target.dataset.name;
+    const id = parseInt(e.target.dataset.index);
+    console.log(this.state.contents[id]);
+    const { firebase } = this.context.store;
+    const storage = firebase.storage();
+    let httpsReference = storage.refFromURL(name);
+
+    // Delete the file
+    //imagesRef
+    httpsReference
+      .delete()
+      .then(() => {
+        console.log("File deleted successfully");
+        this.setState(
+          {
+            contents: this.state.contents.map((item, index) => {
+              return id !== index ? item : { ...item, img: "" };
+            })
+          },
+          this.dbAdd()
+        );
+      })
+      .catch(error => {
+        console.log(error);
       });
   };
 
@@ -94,21 +130,14 @@ class ContentFactory extends Component {
         this.props.content[this.props.lang].contents
           ? (contentArray = this.props.content[this.props.lang].contents)
           : (contentArray = this.state.contents);
-        this.setState(
-          {
-            contents: contentArray,
-            metaData: {
-              title: this.props.content[this.props.lang].metaData.title,
-              description: this.props.content[this.props.lang].metaData
-                .description
-            }
-          },
-          () => {
-            for (let i = 0; i < this.state.contents.length; i++) {
-              this.getImage(this.state.collection + i, i);
-            }
+        this.setState({
+          contents: contentArray,
+          metaData: {
+            title: this.props.content[this.props.lang].metaData.title,
+            description: this.props.content[this.props.lang].metaData
+              .description
           }
-        );
+        });
       } else
         this.setState({
           contents: [{ content: "lütfen veri girişi yapınız.", img: "" }]
@@ -118,34 +147,34 @@ class ContentFactory extends Component {
 
   //handles changes on CKEditor for article content
   onChange = evt => {
-    //  console.log(evt.editor.config.bodyId);
-    const editorName = evt.editor.config.bodyId;
-    let newContent =this.state.contents[editorName];
-    console.log(newContent);
-    newContent["content"] = evt.editor.getData();
-    console.log(newContent);
-    console.log(this.state.contents[editorName]);
+    const editorName = parseInt(evt.editor.config.bodyId);
+    let newContent = evt.editor.getData();
     this.setState({
-      [this.state.contents[editorName]]: newContent
+      contents: this.state.contents.map((item, index) => {
+        return editorName !== index ? item : { ...item, content: newContent };
+      })
     });
-
-    // console.log(evt.editor.getData());
   };
 
   handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
+    console.log(e.target.name)
+    e.target.name === "title"
+      ? this.setState({
+          metaData: { ...this.state.metaData, title: e.target.value }
+        })
+      : this.setState({
+          metaData: {...this.state.metaData, description: e.target.value }
+        });
   };
 
   //save data to database
   dbAdd = () => {
     const { firestore } = this.context.store;
     let data = {
-      contents: this.state.contents,
-      metaData: this.state.metaData
+      contents: [...this.state.contents],
+      metaData: {...this.state.metaData}
     };
-    console.log(data);
+    console.log(data)
     const collectionName = this.state.collection;
     firestore
       .set(
@@ -156,7 +185,7 @@ class ContentFactory extends Component {
         data
       )
       .then(resp => {
-        return console.log(resp);
+        return resp;
       })
       .catch(error => {
         console.log(error);
@@ -168,20 +197,18 @@ class ContentFactory extends Component {
     this.setState({
       contents: [...this.state.contents, newContent]
     });
-    console.log(this.state.contents);
   };
 
   removeContent = e => {
     e.preventDefault();
     const index = e.target.id;
-    const newContent = this.state.contents;
+    const newContent = [...this.state.contents];
     newContent.splice(index, 1);
-
     const { firestore } = this.context.store;
     const collectionName = this.state.collection;
     let data = {
       contents: newContent,
-      metaData: this.state.metaData
+      metaData: { ...this.state.metaData }
     };
     firestore
       .update(
@@ -211,21 +238,21 @@ class ContentFactory extends Component {
 
   handleFileSelect = e => {
     e.preventDefault();
-    const imageName = e.target.name;
-    // Check for the various File API support.
+    e.persist();
+    const imageName = Math.floor(Math.random() * 10000);
     if (window.File && window.FileReader && window.FileList && window.Blob) {
       // Great success! All the File APIs are supported.
     } else {
       alert("The File APIs are not fully supported in this browser.");
     }
     let file = e.target.files[0];
-
     const { firebase } = this.context.store;
 
     const storage = firebase.storage();
     let storageRef = storage.ref();
     let imagesRef = storageRef.child("images/" + imageName + ".jpg");
     imagesRef.put(file).then(snapshot => {
+      this.getImage(imageName, e.target.name);
       console.log(imageName + " resim yükleme durumu=  " + snapshot.state);
     });
   };
@@ -253,6 +280,7 @@ class ContentFactory extends Component {
             collection={this.state.collection}
             addContent={this.addContent}
             removeContent={this.removeContent}
+            removeImage={this.removeImage}
           />
         ) : (
           <Content

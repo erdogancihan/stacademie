@@ -9,7 +9,8 @@ const EditorContainer = ({
   metaData,
   collection,
   addContent,
-  removeContent
+  removeContent,
+  removeImage
 }) => {
   return (
     <div className="editor">
@@ -74,6 +75,7 @@ const EditorContainer = ({
             CKChange={CKChange}
             handleFileSelect={handleFileSelect}
             collection={collection}
+            removeImage={removeImage}
           />
         );
       })}
