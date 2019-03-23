@@ -41,25 +41,7 @@ input[type="file"]{
   display:none;
   color:red;
 }
-.custom-file-upload{
-  
-  margin: 0.5em 1em;
-  border-radius: 15px;
-  height: 2em;
-  width: 150px;
-  outline: none;
-  color: $button-text-color;
-  border: 1px solid $form-border-color;
-  background-color: $form-border-color;
-  font-size: 1em;
-  text-align: center;
-  font-weight: 400;
-  &:hover {
-    background-color: $primary-bg;
-    color: $form-border-color;
-    cursor: pointer;
-  }
-}
+
 .button {
   margin: 1em 0;
   border-radius: 15px;

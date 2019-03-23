@@ -6,22 +6,24 @@ import { compose } from "redux";
 
 export class FooterContainer extends Component {
   render() {
-    const { strings } = this.props;
+    const { strings, language } = this.props;
     return (
-      <footer>
-        
+      <footer className="notranslate">
         <ul className="footer-nav">
           <li>
-            <Link to="/link/impressum">{strings.navbar.impressum}</Link>
+            <Link to={"/" + language + "/impressum"}>
+              {strings.navbar.impressum}
+            </Link>
           </li>
           <li>
-            <Link to="/link/terms">{strings.navbar.terms}</Link>
+            <Link to={"/" + language + "/terms"}>{strings.navbar.terms}</Link>
           </li>
           <li>
-            <Link to="/link/contact">{strings.navbar.contact}</Link>
+            <Link to={"/contact"}>
+              {strings.navbar.contact}
+            </Link>
           </li>
         </ul>
-        
 
         <p> &copy; 2019 stacademy.de All Rights Reserved.</p>
         <p>Developed by E.C.</p>
@@ -39,7 +41,8 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default compose(withRouter,
+export default compose(
+  withRouter,
   connect(mapStateToProps),
   firestoreConnect()
 )(FooterContainer);

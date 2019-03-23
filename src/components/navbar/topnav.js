@@ -47,7 +47,7 @@ export class Topnav extends Component {
   }
   render() {
     return (
-      <div className="topnav">
+      <div className="topnav notranslate">
         <ul className="nav" id="languageUl">
           <li className="nav-item" id="tr" onClick={this.handleSetLang}>
             tr

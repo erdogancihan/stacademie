@@ -1,4 +1,4 @@
-# My Blog
+# ST- Academie
 
 This is a single page BlogSite template. 
 
@@ -26,41 +26,25 @@ I chose a fixed navbar. When the widt is less than 740 pixels it collapses.
 Every Component in the navbar is located under [navbar] folder and folder names are self explenatory.
 
 BrandName: It is linked to "/".
-About: It is linked to "/about".
-Terms: It is linked to "/terms".
-Categories: Every article has a category key in the db. This link lists category names and counts of articles in that category.
+About: It is linked to "/link/about".
+Terms: It is linked to "/link/terms".
+Offers: Gets offer names from an array. Displays names according o the selected language.
 
 The links following are visible according to authentication.
 All authentication components are located in the [auth] folder.
-Login: It is linked to "/signin" with the component [Authentication].
+Login: It is linked to "/admin" with the component [Authentication].
 
-[Addarticle] link is visible to the powerusers and the admin, [users] link is visible to only admin.
 
-The link with the userName directs to the password change component.
 
-###Sidebar
+###Home
 
-There are three containers in the Sidebar container. 
 
-Last Articles: Lists the titles of recent three articles and contains a link to these articles.
+ I used React-Router to make every single page has a distinguished link to make them reachable from search engines. Every article has a description key in the db. I used [react-helmet] to manipulate page title and description for SEO.
 
-Archieve: Lists the article counts according to the year and the months. 
 
-Categories:Lists category names and counts of articles in that category.
 
-These there componets are unvisible at the width less than 740 pixels. These three components are used at the footer as well.
+I used [react-ckeditor-component] for adding and editing contents.
 
-###main
-
-In this part there is list of articles not exceeding five. All articles are collapsed with three lines of content are visible. 
-
-Title of the article has a link to show article in a page alone. I used React-Router to make every single article has a distinguished link to make them reachable from search engines. Every article has a description key in the db. I used [react-helmet] to manipulate page title and description for SEO.
-
-The article owner and the admin can see edit and delete links at the bottom of the article. 
-
-I used [react-ckeditor-component] for adding and editing articles.
-
-Below every article there is messages container. All logged in users can add messages. I used textarea for adding messages. Only the message owner and the admin can delete messages. All messages contains the corresponting articles id and listed accordingly.
 
 
 ###authentication

@@ -56,6 +56,7 @@ const HomeEdit = ({ onChange, handleChange, handleFileSelect, state }) => {
         <CKEditor
           className="CKeditor"
           content={state.content0}
+          config={{bodyId:"content0"}}
           events={{
             change: onChange
           }}
@@ -77,6 +78,7 @@ const HomeEdit = ({ onChange, handleChange, handleFileSelect, state }) => {
         <CKEditor
           className="CKeditor"
           content={state.content1}
+          config={{bodyId:'content1'}}
           events={{
             change: onChange
           }}

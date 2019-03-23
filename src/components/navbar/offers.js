@@ -24,9 +24,8 @@ class Offers extends Component {
   };
 
   render() {
-    const { strings, toggleClass } = this.props;
+    const { strings, toggleClass,language } = this.props;
     const offersArray=Object.keys(strings.offers).map(i=>strings.offers[i])
- 
    
     return (
       <React.Fragment>
@@ -44,6 +43,7 @@ class Offers extends Component {
                 module={module}
                 toggleClass={toggleClass}
                 handleDropdown={this.handleDropdown}
+                language={language}
               />
             );
           })}

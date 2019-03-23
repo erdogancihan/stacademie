@@ -75,6 +75,28 @@
   text-align: right;
   background: $body-bg;
 }
+.add-image{
+display:flex;
+}
+.custom-file-upload{
+  display:inline-block;
+  margin: 0.5em 1em;
+  border-radius: 15px;
+  height: 2em;
+  width: 200px;
+  outline: none;
+  color: $button-text-color;
+  border: 1px solid $form-border-color;
+  background-color: $form-border-color;
+  font-size: 1em;
+  text-align: center;
+  font-weight: 400;
+  &:hover {
+    background-color: $primary-bg;
+    color: $form-border-color;
+    cursor: pointer;
+  }
+}
 @media only screen and (max-width: 740px) {
   .content-container {
     flex-wrap: wrap;

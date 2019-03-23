@@ -31,7 +31,6 @@ class Navbar extends Component {
     authListener.onAuthStateChanged(user => {
       if (user) {
         user.getIdTokenResult().then(idTokenResult => {
-          auth.isPowerUser = idTokenResult.claims.powerUser;
           auth.isAdmin = idTokenResult.claims.admin;
         });
         if (auth.uid && auth.emailVerified === true) {
@@ -51,10 +50,10 @@ class Navbar extends Component {
     const authListener = firebase.auth();
 
     authListener.onAuthStateChanged(user => {
+
       if (user) {
         user.getIdTokenResult().then(idTokenResult => {
-          auth.isPowerUser = idTokenResult.claims.powerUser;
-          auth.isAdmin = idTokenResult.claims.admin;
+           auth.isAdmin = idTokenResult.claims.admin;
         });
       }
     });
@@ -74,9 +73,10 @@ class Navbar extends Component {
     return this.props.location.pathname === path ? "active" : "nav-link";
   };
   render() {
-    const { strings, user, auth } = this.props;
+    const { strings, user, auth,language } = this.props;
+   
     return (
-      <nav className="navbar">
+      <nav className="navbar notranslate">
         <CookieConsent>
           This website uses cookies to enhance the user experience.
         </CookieConsent>
@@ -88,32 +88,32 @@ class Navbar extends Component {
           <i className="fas fa-bars" />
         </div>
         <ul className="navbar-items">
-          <Offers strings={strings} toggleClass={this.toggleClass} />
+          <Offers strings={strings} toggleClass={this.toggleClass} language={language} />
 
-          <li className={this.setNavlinkClass("/link/further")}>
-            <Link to="/link/further" onClick={this.toggleClass}>
+          <li className={this.setNavlinkClass("/"+language+"/further")}>
+            <Link to={"/"+language+"/further"} onClick={this.toggleClass}>
               {strings.navbar.furtherEducation}
             </Link>
           </li>
-          <li className={this.setNavlinkClass("/link/employer")}>
-            <Link to="/link/employer" onClick={this.toggleClass}>
+          <li className={this.setNavlinkClass("/"+language+"/employer")}>
+            <Link to={"/"+language+"/employer"}onClick={this.toggleClass}>
               {strings.navbar.employer}
             </Link>
           </li>
-          <li className={this.setNavlinkClass("/link/certificates")}>
-            <Link to="/link/certificates" onClick={this.toggleClass}>
+          <li className={this.setNavlinkClass("/"+language+"/certificates")}>
+            <Link to={"/"+language+"/certificates"} onClick={this.toggleClass}>
               {strings.navbar.certificates}
             </Link>
           </li>
-          <li className={this.setNavlinkClass("/link/about")}>
-            <Link to="/link/about" onClick={this.toggleClass}>
+          <li className={this.setNavlinkClass("/"+language+"/about")}>
+            <Link to={"/"+language+"/about"}onClick={this.toggleClass}>
               {strings.navbar.about}
             </Link>
           </li>
         </ul>
 
         <ul className="navbar-items navbar-items-right">
-          {!user ? null : auth.isAdmin !== true ? (
+          {!user ? null : auth.isAdmin === true ? (
             <React.Fragment>
               <Admin strings={strings} toggleClass={this.toggleClass} />
               <LoggedIn

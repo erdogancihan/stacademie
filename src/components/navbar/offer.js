@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Offer({ module, index, toggleClass, handleDropdown }) {
+function Offer({ module, index, toggleClass, handleDropdown,language }) {
+ 
   return (
     <li
       onClick={() => {
@@ -9,7 +10,7 @@ function Offer({ module, index, toggleClass, handleDropdown }) {
         toggleClass();
       }}
     >
-      <Link to={"/link/module" + (index + 1)}>{module}</Link>
+      <Link to={"/" + language + "/module" + (index + 1)}>{module}</Link>
     </li>
   );
 }

@@ -68,6 +68,7 @@ class Home extends Component {
       previousProps.auth !== this.props.auth ||
       previousProps.content !== this.props.content
     ) {
+      console.log(this.props.auth.isAdmin);
       this.props.auth.isAdmin
         ? this.setState({
             adminClass: "editButtons"
@@ -107,12 +108,12 @@ class Home extends Component {
             this.setState({
               [name]: url
             });
-           // console.log(url);
+            console.log(url);
           })
           .catch(err => {
-          //  console.log(err);
+            //  console.log(err);
             this.setState({
-              [name]: " "
+              [name]: ""
             });
           });
       };
@@ -132,13 +133,10 @@ class Home extends Component {
 
   //handles changes on CKEditor for article content
   onChange = evt => {
-    // console.log(evt)
-    const editorName = evt.editor.name === "editor1" ? "content0" : "content1";
-    console.log(editorName);
     let newContent = evt.editor.getData();
     this.setState({
       ...this.state,
-      [editorName]: newContent
+      [evt.editor.config.bodyId]: newContent
     });
   };
 
@@ -298,7 +296,15 @@ class Home extends Component {
             <section>
               <div className="container ">
                 <div className="picture">
-                  <img src={this.state.homecontent0} alt="" />
+                  {this.state.homecontent0 === "" ? null : (
+                    <img
+                      src={this.state.homecontent0}
+                      alt={
+                        "Schweiss Technic Academie " +
+                        this.props.match.params.link
+                      }
+                    />
+                  )}
                 </div>
                 <div
                   className="content"
@@ -310,7 +316,15 @@ class Home extends Component {
             <section>
               <div className="container ">
                 <div className="picture">
-                  <img src={this.state.homecontent1} alt="" />
+                  {this.state.homecontent1 === "" ? null : (
+                    <img
+                      src={this.state.homecontent1}
+                      alt={
+                        "Schweiss Technic Academie " +
+                        this.props.match.params.link
+                      }
+                    />
+                  )}
                 </div>
                 <div
                   className="content"

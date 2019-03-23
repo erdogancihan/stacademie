@@ -4,7 +4,7 @@ import Map from "./map";
 class Contact extends Component {
   render() {
     return (
-      <section>
+      <section className="notranslate">
         <Helmet>
           <meta charset="utf-8" />
           <title>Schweiss Technic Academie Kontakt</title>
