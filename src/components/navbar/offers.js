@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Offer from "./offer";
 
-
 class Offers extends Component {
   constructor(props) {
     super(props);
@@ -12,30 +11,28 @@ class Offers extends Component {
 
   //Handles dopdown Menu
 
-  handleDropdown = () => {
+  handleDropdown = (e) => {
+  // e.preventDefault();
     const dropdownContent = document.getElementById("dropdownContent");
-    this.setState({
-      toggleDrop: !this.state.toggleDrop
-    });
-    !this.state.toggleDrop
-      ? dropdownContent.classList.add("drop")
-      : dropdownContent.classList.remove("drop");
-    return;
+    return dropdownContent.classList.toggle("drop");
   };
 
   render() {
-    const { strings, toggleClass,language } = this.props;
-    const offersArray=Object.keys(strings.offers).map(i=>strings.offers[i])
-   
+    const { strings, toggleClass, language } = this.props;
+    const offersArray = Object.keys(strings.offers).map(i => strings.offers[i]);
+
     return (
       <React.Fragment>
-        <li className="nav-link" onClick={this.handleDropdown}>
+        <li
+          className="nav-link"
+          onClick={this.handleDropdown}
+           >
           {strings.navbar.offers} <i className="fas fa-sort-down" />
         </li>
 
-        <ul className="dropdown-content" id="dropdownContent">
-          {offersArray.map((module,index) => {
-    
+        <ul className="dropdown-content" id="dropdownContent"
+        >
+          {offersArray.map((module, index) => {
             return (
               <Offer
                 key={module}

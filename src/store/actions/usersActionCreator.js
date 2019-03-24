@@ -1,5 +1,5 @@
 import { actionTypes } from "redux-firestore";
-import { Success, Failure } from "./usersActions";
+import { Success, Failure, Claim } from "./usersActions";
 
 export const errorMessage = (error, getState) => {
   console.log(getState());
@@ -118,7 +118,6 @@ export const editUser = user => {
         updateDatabase();
         console.log(result);
       });
- 
     } else if (user.privilege === "user") {
       const addUserRole = firebase.functions().httpsCallable("addUserRole");
       addUserRole(user).then(result => {
@@ -184,6 +183,7 @@ export const signInUser = user => {
             doc: response.user.uid,
             storeAs: "user"
           });
+
           return dispatch(Success(response));
         } else {
           let ErrorMessage = errorMessage(
@@ -201,6 +201,23 @@ export const signInUser = user => {
       });
   };
 };
+export const isAdmin = user => {
+  return dispatch => {
+    let isAdmn = false;
+    if (!user) {
+      dispatch(Claim(isAdmn));
+    } else {
+      user
+        .getIdTokenResult()
+        .then(idTokenResult => {
+          isAdmn = idTokenResult.claims.admin;
+        })
+        .then(() => {
+          dispatch(Claim(isAdmn));
+        });
+    }
+  };
+};
 
 export function logOut() {
   return (dispatch, getState, { getFirebase }) => {
@@ -208,15 +225,6 @@ export function logOut() {
     firebase
       .auth()
       .signOut()
-      .then(() => {
-        return dispatch({
-          type: actionTypes.CLEAR_DATA,
-          preserve: {
-            data: ["articles", "messages"],
-            ordered: ["articles", "messages"]
-          }
-        });
-      })
       .then(response => {
         dispatch(Success(response));
       })

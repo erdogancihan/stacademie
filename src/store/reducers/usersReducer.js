@@ -1,10 +1,10 @@
-import { SUCCESS, FAILURE, UNMOUNT } from "../actions/usersActions";
+import { SUCCESS, FAILURE, UNMOUNT, CLAIM } from "../actions/usersActions";
 
 const initialState = {
   error: false,
-  response: false
+  response: false,
+  admin: false
 };
-
 
 const users = (state = initialState, action) => {
   switch (action.type) {
@@ -22,6 +22,12 @@ const users = (state = initialState, action) => {
       return {
         error: false,
         response: false
+      };
+    case CLAIM:
+      return {
+        error: false,
+        isAdmin: action.isAdmin,
+        response: true
       };
     default:
       return state;

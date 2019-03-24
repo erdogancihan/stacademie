@@ -6,12 +6,11 @@ import { compose } from "redux";
 import CookieConsent from "react-cookie-consent";
 import PropTypes from "prop-types";
 
-import { logOut } from "../../store/actions/usersActionCreator";
+import { logOut, isAdmin } from "../../store/actions/usersActionCreator";
 import Offers from "./offers";
 
 import LoggedIn from "./loggedIn";
 import Admin from "./admin";
-
 
 class Navbar extends Component {
   constructor(props) {
@@ -30,9 +29,6 @@ class Navbar extends Component {
 
     authListener.onAuthStateChanged(user => {
       if (user) {
-        user.getIdTokenResult().then(idTokenResult => {
-          auth.isAdmin = idTokenResult.claims.admin;
-        });
         if (auth.uid && auth.emailVerified === true) {
           firestore.onSnapshot({
             collection: "users",
@@ -46,35 +42,37 @@ class Navbar extends Component {
 
   componentDidUpdate() {
     const { firebase } = this.context.store;
-    const auth = this.props.auth;
     const authListener = firebase.auth();
-
     authListener.onAuthStateChanged(user => {
-
-      if (user) {
-        user.getIdTokenResult().then(idTokenResult => {
-           auth.isAdmin = idTokenResult.claims.admin;
-        });
-      }
+      this.props.isAdmin(user);
     });
   }
-
   LogOut = () => {
     console.log("logout");
     this.props.logOut();
   };
 
   toggleClass = () => {
-    const navs = document.querySelectorAll(".navbar-items");
-    navs.forEach(nav => nav.classList.toggle("navbar-toggleShow"));
+    //dropdowns menu when window width is LE 740px
+    const width = window.outerWidth;
+    if (width <= 740) {
+      console.log(width);
+      const navs = document.querySelectorAll(".navbar-items");
+      navs.forEach(nav => nav.classList.toggle("navbar-toggleShow"));
+    }
+    const dropDownContent = document.querySelector(".dropdown-content");
+    return dropDownContent.classList.value === "dropdown-content drop"
+      ? dropDownContent.classList.remove("drop")
+      : null;
   };
 
   setNavlinkClass = path => {
     return this.props.location.pathname === path ? "active" : "nav-link";
   };
+
   render() {
-    const { strings, user, auth,language } = this.props;
-   
+    const { strings, user, auth, language, isAdmin } = this.props;
+
     return (
       <nav className="navbar notranslate">
         <CookieConsent>
@@ -88,32 +86,41 @@ class Navbar extends Component {
           <i className="fas fa-bars" />
         </div>
         <ul className="navbar-items">
-          <Offers strings={strings} toggleClass={this.toggleClass} language={language} />
+          <Offers
+            strings={strings}
+            toggleClass={this.toggleClass}
+            language={language}
+          />
 
-          <li className={this.setNavlinkClass("/"+language+"/further")}>
-            <Link to={"/"+language+"/further"} onClick={this.toggleClass}>
+          <li className={this.setNavlinkClass("/" + language + "/further")}>
+            <Link to={"/" + language + "/further"} onClick={this.toggleClass}>
               {strings.navbar.furtherEducation}
             </Link>
           </li>
-          <li className={this.setNavlinkClass("/"+language+"/employer")}>
-            <Link to={"/"+language+"/employer"}onClick={this.toggleClass}>
+          <li className={this.setNavlinkClass("/" + language + "/employer")}>
+            <Link to={"/" + language + "/employer"} onClick={this.toggleClass}>
               {strings.navbar.employer}
             </Link>
           </li>
-          <li className={this.setNavlinkClass("/"+language+"/certificates")}>
-            <Link to={"/"+language+"/certificates"} onClick={this.toggleClass}>
+          <li
+            className={this.setNavlinkClass("/" + language + "/certificates")}
+          >
+            <Link
+              to={"/" + language + "/certificates"}
+              onClick={this.toggleClass}
+            >
               {strings.navbar.certificates}
             </Link>
           </li>
-          <li className={this.setNavlinkClass("/"+language+"/about")}>
-            <Link to={"/"+language+"/about"}onClick={this.toggleClass}>
+          <li className={this.setNavlinkClass("/" + language + "/about")}>
+            <Link to={"/" + language + "/about"} onClick={this.toggleClass}>
               {strings.navbar.about}
             </Link>
           </li>
         </ul>
 
         <ul className="navbar-items navbar-items-right">
-          {!user ? null : auth.isAdmin === true ? (
+          {!user ? null : isAdmin === true ? (
             <React.Fragment>
               <Admin strings={strings} toggleClass={this.toggleClass} />
               <LoggedIn
@@ -138,17 +145,20 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (state, props) => {
+  // console.log(state);
   return {
     language: state.language.language,
     user: state.firestore.data.user,
     strings: state.language.strings,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    isAdmin: state.users.isAdmin
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-       logOut: () => dispatch(logOut())
+    logOut: () => dispatch(logOut()),
+    isAdmin: user => dispatch(isAdmin(user))
   };
 };
 

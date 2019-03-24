@@ -5,9 +5,10 @@ function Offer({ module, index, toggleClass, handleDropdown,language }) {
  
   return (
     <li
+    
       onClick={() => {
-        handleDropdown();
-        toggleClass();
+        handleDropdown(); 
+         toggleClass();
       }}
     >
       <Link to={"/" + language + "/module" + (index + 1)}>{module}</Link>

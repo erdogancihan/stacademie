@@ -59,13 +59,16 @@
     text-transform: uppercase;
     font-size: 1.8em;
     color: $text-color-white;
-    font-weight: 500;
+    //color:#fffb02;
+    font-weight: 600;
     transition: all 1s;
   }
   p {
     text-transform: capitalize;
-    font-size: 1em;
+    font-size: 0.9em;
     color: $text-color-white;
+    font-style: italic;
+    //color:#fffb02;
     font-weight: 400;
   }
 }
@@ -162,7 +165,7 @@
     }
   }
   .content {
-    flex-basis: 70%;
+    flex-basis: 80%;
     margin: 1em;
   }
   h1 {
@@ -213,12 +216,15 @@
     }
   }
   h3 {
+    overflow: hidden;
     z-index: 1;
     text-align: center;
-    font-size: 1.4em;
+    font-size: 1.2em;
+    text-overflow: ellipsis;
     letter-spacing: 4px;
     font-weight: 400;
     width: 100%;
+    padding:0 2px;
   }
   a {
     color: $text-color-white;
