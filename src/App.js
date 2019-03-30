@@ -20,9 +20,9 @@ class App extends Component {
         <div className="App notranslate">
           <Helmet>
             <meta charset="utf-8" />
-            <title>Schweiss Technic Academie</title>
-            <meta name="description" content="Schweiss Technic Academie" />
-            <link rel="canonical" href="" />
+            <title>Schweiß Technik Akademie</title>
+            <meta name="description" content="Schweiß Technik Akademie" />
+            <link rel="canonical" href="/" />
           </Helmet>
           <Topnav />
           <Route>

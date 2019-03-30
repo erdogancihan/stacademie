@@ -1,4 +1,3 @@
-import { actionTypes } from "redux-firestore";
 import { Success, Failure, Claim } from "./usersActions";
 
 export const errorMessage = (error, getState) => {
@@ -69,27 +68,6 @@ export function deleteUser(user) {
       });
   };
 }
-
-/*export const editUser = user => {
-  console.log(user);
-  return (dispatch, getState, { getFirestore }) => {
-    const fireStore = getFirestore();
-    fireStore
-      .update({ collection: "users", doc: user.id }, user)
-      .then(resp => {
-        return console.log(resp);
-      })
-      .then(response => {
-        dispatch(Success(response));
-      })
-      .catch(error => {
-        let ErrorMessage = errorMessage(error, getState);
-        dispatch(Failure(ErrorMessage));
-        return console.log(ErrorMessage);
-      });
-  };
-};
-*/
 
 //edits custom claims
 export const editUser = user => {
@@ -226,6 +204,7 @@ export function logOut() {
       .auth()
       .signOut()
       .then(response => {
+        console.log("logged out.")
         dispatch(Success(response));
       })
       .catch(error => {

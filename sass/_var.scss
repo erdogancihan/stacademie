@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+
+
+
+// colors
+$body-bg: rgba(254, 254, 254, 1); //body color
+
+//contentFactory
+$primary-text: #222222;
+$secondary-text: #035196;
+$text-white: #fefefe;
+
+// navbar
+$nav-bg: #fefefe;
+$nav-link: $secondary-text;
+$nav-link-hover: #fefefe;
+$nav-link-bg-hover: #74c5f3;
+
+//footer
+$footer-bg: #59b0e2;
+$footer-text: #fefefe;
+//form
+$form-text: $primary-text;
+$form-border: $secondary-text;
+
+
+/* ////////////// Break Points ///////////////*/
+//small tablets and large smartphones(landscape view)
+$sm:576px;
+
+//small tablets(portrait view)
+$md:768px;
+
+//Tablets and small desktops
+$lg:992px;
+
+//Large tablets and desktops
+$xl:1200px;
+
+//greaer than any size
+$xxl:40000px;
+
+

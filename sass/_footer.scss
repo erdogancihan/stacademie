@@ -1,17 +1,19 @@
 footer {
   background-color: $footer-bg;
-  color: $footer-primary-side;
+  color: $footer-text;
  
     p {
       text-align: center;
       color:$footer-text;
       padding: 0.2em 0;
+      font-size:1.1em;
     }
     
     a{
       text-align: center;
       color:$footer-text;
       padding: 0.2em 0;
+      font-size:1.1em;
     }
 }
 

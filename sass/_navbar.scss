@@ -32,7 +32,7 @@
   border-radius: 15px;
   list-style: none;
   padding: 1em 0.5em;
-  font-size: 0.9em;
+  font-size: 1.1em;
   background: $nav-link-bg-hover;
   outline: none;
 
@@ -41,38 +41,20 @@
   }
 }
 
-.nav-link {
-  margin: 0.1em;
-  border-radius: 15px;
-  list-style: none;
-  padding: 1em 0.5em;
-  font-size: 0.9em;
-  background: $nav-bg;
-  outline: none;
-  color: $nav-link;
-  cursor: pointer;
-  a {
-    color: $nav-link;
-  }
-  &:hover {
-    background: $nav-link-bg-hover;
-    color: $nav-link-hover;
-    a {
-      color: $nav-link-hover;
-    }
-  }
-}
+
 
 .navbar {
   z-index: 10;
   top: 0px;
-  margin: auto;
+  padding: 0;
+  margin: 0 1rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-items: flex-end;
   background-color: $nav-bg;
   color: $nav-link;
-  width: 90%;
+  width: 100%;
   min-height: 60px;
 
   //border: 1px red solid;
@@ -91,15 +73,15 @@
 }
 
 .fa-bars {
-  color: $bars-color;
+  color: $nav-link;
   font-size: 1.4em;
 }
 .nav-link {
   margin: 0.1em;
   border-radius: 15px;
   list-style: none;
-  padding: 1em 0.5em;
-  font-size: 0.85em;
+  padding: 0.5em 0.3em;
+  font-size: 1.1em;
   background: $nav-bg;
   outline: none;
 
@@ -142,7 +124,7 @@
     list-style: none;
     padding: 0.4em 1em;
     background-color: $nav-bg;
-    font-size: 0.9em;
+    font-size: 1.1em;
     color: $nav-link-hover;
 
     a {

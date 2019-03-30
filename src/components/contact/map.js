@@ -17,7 +17,7 @@ class Map extends Component {
       let s = document.createElement("script");
       s.type = "text/javascript";
       s.src =
-        "https://maps.googleapis.com/maps/api/js?key=YOURKEYHERE&callback=initMap";
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyCJa8QeVn64JjIh-aP1lhWDD5U_AHXTDzY&callback=initMap";
       let x = document.getElementsByTagName("script")[0];
       x.parentNode.insertBefore(s, x);
       s.addEventListener("load", e => {

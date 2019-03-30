@@ -32,16 +32,16 @@ class Contact extends Component {
             }}
           />
           <div className="contact">
-            <h1>Schweiss Technic Academie</h1>
+            <h1>Schweiß Technik Akademie</h1>
 
-            <p><a href="https://www.google.de/maps/dir/?api=1&destination=In+Schlenk+86%2C+47055+Duisburg">In Schlenk 86, 47055 Duisburg</a></p>
+            <p><a href="https://www.google.de/maps/dir/?api=1&destination=In+Schlenk+86%2C+47055+Duisburg">Im Schlenk 86, 47055 Duisburg</a></p>
             <p> <a href="tel:+4920371281413">Tel: +49 (0) 203 7128 1413</a></p>
             <p>Fax: +49 (0) 203 7128 1412</p>
 
             <p>
-              <a href="mailto:aa@aa.com">
+              <a href="mailto:stacademie@gmail.com">
                 <i className="fas fa-envelope" />{" "}
-                mail@guerotech-bildungszentrum.de
+                stacademie@gmail.com
               </a>{" "}
             </p>
           </div>

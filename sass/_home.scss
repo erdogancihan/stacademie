@@ -1,0 +1,246 @@
+body {
+  overflow-x: hidden;
+  background-color: $body-bg;
+  color: $primary-text;
+  font-family: "Rajdhani", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.showtime {
+  position: relative;
+  max-height: 75vh;
+  max-width: 1200px;
+  padding: 0;
+  margin: 0 1rem;
+  margin-top: 1rem;
+  background-color: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  #leftArrow {
+    z-index: 20;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    margin-left: 20px;
+    font-size: 70px;
+    color: $text-white;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+      opacity: 0.8;
+      transition: all 300ms ease-in-out;
+    }
+  }
+  #rightArrow {
+    z-index: 20;
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    margin-right: 20px;
+    font-size: 70px;
+    color: $text-white;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+      opacity: 0.7;
+      transition: all 300ms ease-in-out;
+    }
+  }
+  @include mediamax($sm) {
+   #rightArrow,#leftArrow{
+    font-size: 30px;
+   }
+  }
+}
+
+.showtime__img {
+  overflow: hidden;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+  }
+  & :hover img {
+    opacity: 0.6;
+  }
+}
+.showtime__text {
+  z-index: 1;
+  position: absolute;
+  top: 55%;
+  margin-left: 100px;
+  width: 400px;
+
+  h1 {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    color: $text-white;
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
+  p {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    color: $text-white;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  @include mediamax($sm) {
+    margin-left:20px;
+    top:70%;
+    width: 280px;
+    h1{
+      font-size: 1rem;
+    }
+    p {
+      display: none;
+    }
+  }
+  @include media($md, $lg) {
+  }
+  @include media($lg, $xl) {
+  }
+  @include media($xl, $xxl) {
+  }
+}
+
+/* starting ENTER animation */
+.slide-left-enter {
+  position: absolute;
+  transform: translateX(100%);
+}
+
+/* ending ENTER animation */
+.slide-left-enter-active {
+  transform: translateX(0%);
+  transition: all 1000ms ease-in-out;
+}
+
+/* starting EXIT animation */
+.slide-left-exit {
+  transform: translateX(0%);
+}
+
+/* ending EXIT animation */
+.slide-left-exit-active {
+  transform: translateX(-100%);
+  transition: all 1000ms ease-in-out;
+}
+
+/* starting ENTER animation */
+.slide-right-enter {
+  position: absolute;
+  transform: translateX(-100%);
+}
+
+/* ending ENTER animation */
+.slide-right-enter-active {
+  transform: translateX(0%);
+  transition: all 1000ms ease-in-out;
+}
+
+/* starting EXIT animation */
+.slide-right-exit {
+  transform: translateX(0%);
+}
+
+/* ending EXIT animation */
+.slide-right-exit-active {
+  transform: translateX(100%);
+  transition: all 1000ms ease-in-out;
+}
+
+/* starting ENTER animation */
+.showtime__text-enter {
+  opacity: 0;
+}
+
+/* ending ENTER animation */
+.showtime__text-enter-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in-out;
+}
+
+/* starting EXIT animation */
+.showtime__text-exit {
+  opacity: 0;
+}
+
+/* ending EXIT animation */
+.showtime__text-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-basis: 180px;
+  border-radius: 15px;
+  margin: 0 1rem;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+}
+.courses__title {
+  color: $secondary-text;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+.module {
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+  width: 180px;
+  height: 240px;
+  margin: 1em;
+  transition: all 300ms ease-in-out;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  a {
+    display: block;
+    height: 100%;
+    color: $secondary-text;
+    text-align: center;
+    font-size: 1em;
+    padding: 0.2em 0.4em;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+}
+@media only screen and (max-width: 740px) {
+  .container {
+    flex-wrap: wrap;
+    .content {
+      flex-basis: 100%;
+      margin: 0.5em;
+    }
+
+    .picture {
+      max-width: 70%;
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+}

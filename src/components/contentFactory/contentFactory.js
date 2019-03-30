@@ -12,7 +12,7 @@ class ContentFactory extends Component {
     this.state = {
       edit: false,
       adminClass: "hide",
-      className: "content-container"
+      className: "contents"
     };
   }
   static contextTypes = {
@@ -86,7 +86,7 @@ class ContentFactory extends Component {
         metaData: { title: "title", description: "description" }
       }
     };
-    const { contentData = defaultPropsData, lang } = this.props;
+    const { contentData = defaultPropsData, lang,classNames } = this.props;
     const collection = this.props.collection;
     return contentData && contentData[lang] ? (
       <section>
@@ -111,7 +111,7 @@ class ContentFactory extends Component {
           <Content
             contents={contentData[lang].contents}
             metaData={contentData[lang].metaData}
-            className={this.state.className}
+            className={"contents "+ classNames  }
           />
         )}
 

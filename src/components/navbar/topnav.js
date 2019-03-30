@@ -8,6 +8,7 @@ import {
 } from "../../store/actions/languagesActionCreator";
 
 
+
 export class Topnav extends Component {
   componentDidMount() {
     //gets the language from the local stroge.
@@ -49,7 +50,7 @@ export class Topnav extends Component {
     return (
       <div className="topnav notranslate">
         <ul className="nav" id="languageUl">
-          <li className="nav-item" id="tr" onClick={this.handleSetLang}>
+          <li style={{display:"none"}} className="nav-item" id="tr" onClick={this.handleSetLang}>
             tr
           </li>
 

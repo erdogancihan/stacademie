@@ -2,11 +2,11 @@ import React from "react";
 import CKEditor from "react-ckeditor-component";
 
 function Editor(props) {
- // console.log(props.content);
+  // console.log(props.content);
 
   return (
-    <div className="editcontainer">
-      <h2> {"İçerik Düzenle "+props.index}</h2>
+    <div className="editor__edit">
+      <h2> {"İçerik ' " + props.index + " ' Düzenle "}</h2>
       <div className="add-image">
         <label
           className=" custom-file-upload"
@@ -32,7 +32,13 @@ function Editor(props) {
             >
               Mevcut Resmi Göster
             </a>
-            <label className=" custom-file-upload" data-name={props.content.img} data-index={props.index} htmlFor="file5" onClick={props.removeImage}>
+            <label
+              className=" custom-file-upload"
+              data-name={props.content.img}
+              data-index={props.index}
+              htmlFor="file5"
+              onClick={props.removeImage}
+            >
               Resmi Sil
             </label>
           </React.Fragment>

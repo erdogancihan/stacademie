@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Courses from "./courses";
 import ContentFactory from "../contentFactory/contentFactory";
-import Img1 from "../../images/acetylene-1239331_1920.jpg";
-import Img2 from "../../images/welder-673559_1920.jpg";
-import Img3 from "../../images/welder-3018425_1920.jpg";
-import Img4 from "../../images/courses-background.jpg";
+import Img1 from "../../images/istockphoto-915567912-2048x2048.jpg";
+import Img2 from "../../images/istockphoto-1050241598-1024x1024.jpg";
+import Img3 from "../../images/Spot-Welding.jpeg";
+import Img4 from "../../images/051.jpg";
 
 class Home extends Component {
   constructor(props) {
@@ -43,26 +41,19 @@ class Home extends Component {
     };
   }
 
+
   slide = e => {
-    e.target.id === "left"
-      ? this.state.slideIndex === 0
-        ? this.setState({
-            slideIndex: this.state.showTime.length - 1,
-            slideDirection: "slide-left"
-          })
-        : this.setState({
-            slideIndex: this.state.slideIndex - 1,
-            slideDirection: "slide-left"
-          })
-      : this.state.slideIndex === this.state.showTime.length - 1
-      ? this.setState({
-          slideIndex: 0,
-          slideDirection: "slide-right"
-        })
-      : this.setState({
-          slideIndex: this.state.slideIndex + 1,
-          slideDirection: "slide-right"
-        });
+    if (e.target.id === "left") {
+      this.setState({
+        slideIndex: (this.state.slideIndex +3) % 4,
+        slideDirection: "slide-left"
+      });
+    } else if (e.target.id === "right") {
+      this.setState({
+        slideIndex: (this.state.slideIndex + 1) % 4,
+        slideDirection: "slide-left"
+      });
+    }
   };
 
   render() {
@@ -70,7 +61,7 @@ class Home extends Component {
     const { strings, lang } = this.props;
 
     return (
-      <div>
+      <div className="container">
         <section className="showtime">
           <div id="leftArrow" onClick={this.slide}>
             <i id="left" className="fas fa-angle-left" />
@@ -78,7 +69,7 @@ class Home extends Component {
           <div id="rightArrow" onClick={this.slide}>
             <i id="right" className="fas fa-angle-right" />
           </div>
-          <div className="slide">
+          <div className="showtime__img">
             <TransitionGroup
               childFactory={child => React.cloneElement(child, { classNames })}
             >
@@ -93,35 +84,31 @@ class Home extends Component {
                 />
               </CSSTransition>
             </TransitionGroup>
-
-            <TransitionGroup>
-              <CSSTransition
-                key={this.state.slideIndex}
-                timeout={1000}
-                classNames="showtimeText"
-              >
-                <div className="showtimeText">
-                  <h1>
-                    {
-                      this.state.showTime[this.state.slideIndex]
-                        .showtimeTextHeader
-                    }
-                  </h1>
-                  <p>
-                    {
-                      this.state.showTime[this.state.slideIndex]
-                        .showtimeTextHeader
-                    }{" "}
-                  </p>
-                </div>
-              </CSSTransition>
-            </TransitionGroup>
           </div>
+          <TransitionGroup>
+            <CSSTransition
+              key={this.state.slideIndex}
+              timeout={1000}
+              classNames="showtime__text"
+            >
+              <div className="showtime__text">
+                <h1>
+                  {
+                    this.state.showTime[this.state.slideIndex]
+                      .showtimeTextHeader
+                  }
+                </h1>
+                <p>
+                  {this.state.showTime[this.state.slideIndex].showtimeText}{" "}
+                </p>
+              </div>
+            </CSSTransition>
+          </TransitionGroup>
         </section>
 
-        <ContentFactory link={"home1"} />
+        <ContentFactory link={"home1"} classNames={"home__content"} />
         <Courses strings={strings} lang={lang} />
-        <ContentFactory link={"home2"} />
+        <ContentFactory link={"home2"} classNames={"quote"} />
       </div>
     );
   }

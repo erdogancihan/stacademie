@@ -1,13 +1,16 @@
-.content-container {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contents {
   display: flex;
   flex-wrap: no-wrap;
-  justify-content: space-around;
-  max-width: 1200px;
-  padding: 0 0;
-  margin: auto;
-  margin-top: 3em;
+  margin: 1rem;
+  justify-content: space-between;
   background: $body-bg;
-
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
   .picture {
     overflow: hidden;
     max-width: 50%;
@@ -20,34 +23,26 @@
     flex-basis: 70%;
     margin: 1.5em;
   }
-  .contact {
-    a {
-      color: $secondary-text-color;
-    }
-    p {
-      text-align: center;
-    }
-    h1{
-      padding-top:1em;
-      text-align: center;
-    }
+
+  h1,
+  h2,
+  h3 {
+    color: $secondary-text;
+    text-transform: uppercase;
   }
   h1 {
     font-size: 2em;
     margin-bottom: 1em;
-    color: $secondary-text-color;
   }
   h2 {
     margin-bottom: 1.5em;
-    color: $secondary-text-color;
   }
-  h3 {
-    margin-bottom: 1em;
-    color: $secondary-text-color;
-  }
+  h3,
   p {
     margin-bottom: 1em;
-    color: $primary-text-color;
+  }
+  p {
+    color: $primary-text;
     line-height: 1.5em;
     text-align: justify;
   }
@@ -55,12 +50,32 @@
     padding-bottom: 0.5em;
   }
 }
+
+//additional classes
+.quote{
+  text-align: center;
+  box-shadow: none;
+  .content {
+    flex-basis: 100%;
+    margin: 1.5em;
+  }
+  h1::before,h1::after{
+    font-size:1.5em;
+  }
+  h1::before{
+    content:open-quote;
+   
+  }
+  h1::after{
+    content:close-quote;
+  
+  }
+}
 .editButtons {
   cursor: pointer;
   max-width: 1200px;
   padding: 1em 2em;
   margin: auto;
-  text-align: right;
   background: $body-bg;
 }
 .hide {
@@ -68,49 +83,54 @@
 }
 
 .editor {
-  max-width: 1200px;
   padding: 0em;
-  margin-top: 5em !important;
+  margin-top: 5em;
   margin: auto;
-  text-align: right;
   background: $body-bg;
 }
-.add-image{
-display:flex;
+.add-image {
+  display: flex;
 }
-.custom-file-upload{
-  display:inline-block;
+.custom-file-upload {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0.5em 1em;
   border-radius: 15px;
-  height: 2em;
+  padding: 0.5em 1em;
   width: 200px;
   outline: none;
-  color: $button-text-color;
-  border: 1px solid $form-border-color;
-  background-color: $form-border-color;
+  color: $form-text;
+  border: 1px solid $form-border;
+  background-color: $body-bg;
   font-size: 1em;
   text-align: center;
   font-weight: 400;
   &:hover {
-    background-color: $primary-bg;
-    color: $form-border-color;
+    color: $body-bg;
+    background: $nav-link-bg-hover;
+    border: 1px solid $nav-link-bg-hover;
     cursor: pointer;
   }
 }
+.editor__edit {
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 1em;
+}
+
 @media only screen and (max-width: 740px) {
-  .content-container {
+  .contents {
     flex-wrap: wrap;
     margin-top: 1em;
     .picture {
       max-width: 100%;
-      margin: 1em 0;
-      img {
-        width: 100%;
-      }
+      margin: 0;     
     }
     .content {
       flex-basis: 100%;
-      margin: 1em 0.5em;
+      margin: 1rem 0.5rem;
     }
   }
 }

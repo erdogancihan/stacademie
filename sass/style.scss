@@ -1,6 +1,10 @@
-@import "utilities";
+@import url("https://fonts.googleapis.com/css?family=Advent+Pro|Josefin+Slab|Rajdhani");
+@import "reset";
+@import "var";
+@import "mixins";
 @import "navbar";
 @import "footer";
 @import "auth";
+@import "home";
+@import "contact";
 @import "contentFactory";
-@import "landing";

@@ -9,23 +9,17 @@
   padding: 0;
 }
 
-h2 {
-  margin-bottom: 1em;
+.form-group{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin:1em;
 }
 
-label {
-  font-weight: 600;
-  display: block;
-  margin: 0em 1em;
-  padding: 0.2em 0;
-  color: $form-text-color;
-  text-align: left;
- 
-}
 input {
   display:block;
-  border: 1px solid $form-border-color;
-  color: $form-text-color;
+  border: 1px solid $form-border;
+  color: $form-text;
   border-radius: 15px;
   height: 2.5em;
   width: (95%);
@@ -33,7 +27,7 @@ input {
   padding: 0 0.5em;
   margin: 0.5em 1em;
   &::placeholder {
-    color: lighten($form-text-color, $amount: 50);
+    color: lighten($form-text, $amount: 50);
   }
 }
 
@@ -42,26 +36,12 @@ input[type="file"]{
   color:red;
 }
 
-.button {
-  margin: 1em 0;
-  border-radius: 15px;
-  height: 2em;
-  width: 100px;
-  outline: none;
-  color: $button-text-color;
-  border: 1px solid $form-border-color;
-  background-color: $form-border-color;
-  font-size: 1em;
-  &:hover {
-    background-color: $primary-bg;
-    color: $form-border-color;
-    cursor: pointer;
-  }
-}
+
 .blurred{
-  color: lighten($form-text-color, $amount: 50);
+  color: lighten($form-text, $amount: 50);
   font-weight: 400;
   font-size:0.9em;
+  margin:0.5em 1em;
 }
 .center {
   display: flex;
@@ -76,7 +56,7 @@ input[type="file"]{
   cursor: pointer;
   color: $primary-text;
   &:hover {
-    color: $primary-text-hover;
+    color: $primary-text;
     font-weight: 500;
   }
 }
@@ -89,70 +69,7 @@ input[type="file"]{
   text-align: center;
   vertical-align: center;
   padding: 0.4em;
-  font-size: 0.8em;
-  .button-edit {
-    border-radius: 15px;
-    padding: 0.1em 0.4em;
-    outline: none;
-    color: $primary-text;
-    background-color: $body-bg;
-    border: 1px solid $primary-bg;
-    font-size: 0.9em;
-    &:hover {
-      background-color: $primary-bg;
-      color: $primary-text-light;
-      border: 1px solid $primary-text;
-    }
-  }
-  .button-delete {
-    border-radius: 15px;
-    padding: 0.1em 0.4em;
-    outline: none;
-    background-color: $body-bg;
-    color: $primary-text;
-    border: 1px solid $primary-bg;
-    font-size: 0.9em;
-    &:hover {
-      background-color: $primary-bg;
-      color: $primary-text-light;
-      border: 1px solid $body-bg;
-    }
-  }
-  th {
-    background-color: $primary-bg;
-    color: $primary-text-light;
-    padding: 0.4em;
-  }
-  tr:nth-child(even) {
-    background-color: $primary-bg;
-    color: $primary-text-light;
-    .button-delete {
-      &:hover {
-        background-color: $primary-bg;
-        color: $primary-text-light;
-        border: 1px solid $body-bg;
-      }
-    }
-    .button-edit {
-      &:hover {
-        background-color: $primary-bg;
-        color: $primary-text-light;
-        border: 1px solid $body-bg;
-      }
-    }
-  }
-  select {
-    border-radius: 15px;
-    height: 1.5em;
-    outline: none;
-    padding: 0 0.1em;
-    color: $primary-text;
-    border: 1px solid $primary-bg;
-  }
-  td {
-    border-bottom: 1px solid $border-left-top;
-    padding: 0.4em;
-  }
+  font-size: 0.8em;  
 }
 .users-rules {
   padding: 2em;

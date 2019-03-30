@@ -190,41 +190,43 @@ class EditorContainer extends Component {
     const { collection, toggleEdit } = this.props;
 
     return (
-      <div className="editor">
-        <div className="form-group">
-          <label className="form-control" htmlFor="title">
-            Title
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="title"
-            name="title"
-            aria-describedby="title"
-            placeholder="Sayfa başlığı girin."
-            value={this.state.metaData.title}
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label className="form-control" htmlFor="description">
-            Description{" "}
-            <span className="blurred">
-              (Google arama sonuçlarında görünebilir olmak için açıklama
-              yazınız. Açıklama başlıktaki kelimeleri de içermeli ve 150
-              karakteri geçmemelidir.)
-            </span>
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="description"
-            name="description"
-            aria-describedby="description"
-            placeholder="Açıklama girin."
-            value={this.state.metaData.description}
-            onChange={this.handleChange}
-          />
+      <div className="container">
+        <div className="editor">
+          <div className="form-group">
+            <label className="form-control" htmlFor="title">
+              Title
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="title"
+              name="title"
+              aria-describedby="title"
+              placeholder="Sayfa başlığı girin."
+              value={this.state.metaData.title}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-control" htmlFor="description">
+              Description{" "}
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="description"
+              name="description"
+              aria-describedby="description"
+              placeholder="Açıklama girin."
+              value={this.state.metaData.description}
+              onChange={this.handleChange}
+            />
+          </div>
+          <p className="blurred">
+            (Google arama sonuçlarında görünebilir olmak için açıklama yazınız.
+            Açıklama başlıktaki kelimeleri de içermeli ve 150 karakteri
+            geçmemelidir.)
+          </p>
           <div className="add-image">
             <button className=" custom-file-upload" onClick={this.addContent}>
               Yeni İçerik Ekle
@@ -237,33 +239,34 @@ class EditorContainer extends Component {
                   id={index}
                   onClick={this.removeContent}
                 >
-                  {index + " nolu içeriği sil"}
+                  {'"' + index + '"' + " nolu içeriği sil"}
                 </button>
               );
             })}
           </div>
-        </div>
-        {this.state.contents.map((content, index) => {
-          return (
-            <Editor
-              content={content}
-              index={index}
-              key={index}
-              CKChange={this.onChange}
-              handleFileSelect={this.handleFileSelect}
-              collection={collection}
-              removeImage={this.removeImage}
-            />
-          );
-        })}
-        <div
-          className={"editButtons"}
-          onClick={() => {
-            toggleEdit();
-            this.dbAdd();
-          }}
-        >
-          <i className="fas fa-edit" /> <span> </span> <i>Kaydet</i>
+          {this.state.contents.map((content, index) => {
+            return (
+              <Editor
+                content={content}
+                index={index}
+                key={index}
+                CKChange={this.onChange}
+                handleFileSelect={this.handleFileSelect}
+                collection={collection}
+                removeImage={this.removeImage}
+              />
+            );
+          })}
+          <div
+            className={"editButtons"}
+            onClick={() => {
+              toggleEdit();
+              this.dbAdd();
+            }}
+          >
+            {" "}
+            <i className="fas fa-edit" /> <i> Kaydet</i>{" "}
+          </div>
         </div>
       </div>
     );

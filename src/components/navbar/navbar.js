@@ -48,7 +48,6 @@ class Navbar extends Component {
     });
   }
   LogOut = () => {
-    console.log("logout");
     this.props.logOut();
   };
 
@@ -71,16 +70,23 @@ class Navbar extends Component {
   };
 
   render() {
-    const { strings, user, auth, language, isAdmin } = this.props;
+    const { strings, auth, language } = this.props;
 
     return (
-      <nav className="navbar notranslate">
-        <CookieConsent>
-          This website uses cookies to enhance the user experience.
+      <nav className=" navbar notranslate">
+        <CookieConsent buttonText="OK">
+          Diese Website nutzt Cookies, um bestmögliche Funktionalität bieten zu
+          können.
+          <Link
+            to={"/" + language + "/terms"}
+            style={{ color: "#fefefe", textDecoration: "underline" }}
+          >
+            Mehr erfahren
+          </Link>
         </CookieConsent>
 
         <div className="navbar-brand">
-          <Link to="/">Schweiss Technic Academie</Link>
+          <Link to="/">Schweiß Technik Akademie</Link>
         </div>
         <div className=" nav-link-toggle" onClick={this.toggleClass}>
           <i className="fas fa-bars" />
@@ -120,11 +126,12 @@ class Navbar extends Component {
         </ul>
 
         <ul className="navbar-items navbar-items-right">
-          {!user ? null : isAdmin === true ? (
+          {auth.isEmpty === true ? null : auth.email ===
+            "erdogancihann@gmail.com" ? (
             <React.Fragment>
               <Admin strings={strings} toggleClass={this.toggleClass} />
               <LoggedIn
-                user={user}
+                user={auth}
                 LogOut={this.LogOut}
                 strings={strings}
                 toggleClass={this.toggleClass}
@@ -132,7 +139,7 @@ class Navbar extends Component {
             </React.Fragment>
           ) : (
             <LoggedIn
-              user={user}
+              user={auth}
               LogOut={this.LogOut}
               strings={strings}
               toggleClass={this.toggleClass}
@@ -144,8 +151,8 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => {
-  // console.log(state);
+const mapStateToProps = state => {
+  //console.log(state);
   return {
     language: state.language.language,
     user: state.firestore.data.user,

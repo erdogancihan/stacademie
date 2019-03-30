@@ -1,0 +1,12 @@
+/*Media Quaries*/
+/// @param {string} $min min-width, $max maxwidth.
+@mixin media($min,$max) {
+  @media screen and (min-width:$min) and (max-width:$max)  {
+    @content;
+  }
+}
+@mixin mediamax($max) {
+  @media screen and (max-width:$max)  {
+    @content;
+  }
+}

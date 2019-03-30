@@ -1,5 +1,6 @@
 {
   "projects": {
-    "sta": "stacademie"
+    "sta": "stacademie",
+    "stacademie": "stacademie-bf4b9"
   }
 }
