@@ -15,8 +15,6 @@ const initialState = {
 const language = (state = initialState, action) => {
   switch (action.type) {
     case LANGUAGE_TR:
-     
-
       return {
         language: "tr",
         strings: tr,
