@@ -1,22 +1,22 @@
 .topnav {
   display: flex;
   justify-content: flex-end;
-  margin-right: 2em;
+  margin-right: 2rem;
   width: 100%;
-  z-index: 10;
-  top: 0;
+
   height: 2.2em;
+  // border: 1px red solid;
   .nav {
     list-style: none;
     .nav-item {
       display: inline-block;
       height: 2.2em;
       padding: 0.4em;
+      //border: 1px red solid;
+      cursor: pointer;
       &:hover {
         color: $nav-link-hover;
         background-color: $nav-link-bg-hover;
-
-        cursor: pointer;
       }
     }
   }
@@ -40,15 +40,20 @@
     color: $nav-link-hover;
   }
 }
-
-
+.disabled-link {
+    cursor: auto!important;
+  
+  &:hover {
+    color: initial!important;
+    background-color: initial!important;
+  }
+}
 
 .navbar {
   z-index: 10;
   top: 0px;
   padding: 0;
   margin: 0 1rem;
-  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-items: flex-end;
@@ -56,8 +61,6 @@
   color: $nav-link;
   width: 100%;
   min-height: 60px;
-
-  //border: 1px red solid;
   outline: none;
 }
 .navbar-brand {

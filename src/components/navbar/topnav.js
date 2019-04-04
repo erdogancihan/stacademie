@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-
 import {
   setLanguage,
   getLanguage
 } from "../../store/actions/languagesActionCreator";
-
-
 
 export class Topnav extends Component {
   componentDidMount() {
@@ -22,7 +19,6 @@ export class Topnav extends Component {
   handleSetLang = e => {
     const lang = e.target.id;
     this.props.setLanguage(lang);
-   
   };
   componentDidUpdate() {
     //changes the class of the selected item
@@ -31,26 +27,26 @@ export class Topnav extends Component {
       case "tr":
         document.getElementById("tr").classList.add("active-lang");
         document.getElementById("de").classList.remove("active-lang");
-        return (document.getElementById("en").classList.remove("active-lang"));
+        return document.getElementById("en").classList.remove("active-lang");
       case "de":
-      document.getElementById("tr").classList.remove("active-lang");
+        document.getElementById("tr").classList.remove("active-lang");
         document.getElementById("de").classList.add("active-lang");
-        return (document.getElementById("en").classList.remove("active-lang"));
+        return document.getElementById("en").classList.remove("active-lang");
       case "en":
-      document.getElementById("tr").classList.remove("active-lang");
+        document.getElementById("tr").classList.remove("active-lang");
         document.getElementById("de").classList.remove("active-lang");
-        return (document.getElementById("en").classList.add("active-lang"));
+        return document.getElementById("en").classList.add("active-lang");
       default:
-      document.getElementById("tr").classList.remove("active-lang");
-      document.getElementById("de").classList.remove("active-lang");
-      return (document.getElementById("en").classList.remove("active-lang"));
+        document.getElementById("tr").classList.remove("active-lang");
+        document.getElementById("de").classList.remove("active-lang");
+        return document.getElementById("en").classList.remove("active-lang");
     }
   }
   render() {
     return (
       <div className="topnav notranslate">
         <ul className="nav" id="languageUl">
-          <li style={{display:"none"}} className="nav-item" id="tr" onClick={this.handleSetLang}>
+          <li className="nav-item disabled-link" id="tr">
             tr
           </li>
 
@@ -58,7 +54,7 @@ export class Topnav extends Component {
             de
           </li>
 
-          <li className="nav-item" id="en" onClick={this.handleSetLang}>
+          <li className="nav-item disabled-link" id="en" >
             en
           </li>
         </ul>
@@ -67,6 +63,7 @@ export class Topnav extends Component {
   }
 }
 const mapStateToProps = state => {
+  console.log(state);
   return {
     language: state.language
   };
@@ -74,8 +71,7 @@ const mapStateToProps = state => {
 const mapDispatchToprops = dispatch => {
   return {
     setLanguage: lang => dispatch(setLanguage(lang)),
-    getLanguage: () => dispatch(getLanguage()),
-
+    getLanguage: () => dispatch(getLanguage())
   };
 };
 export default connect(

@@ -4,7 +4,7 @@ import Map from "./map";
 class Contact extends Component {
   render() {
     return (
-      <section className="notranslate">
+      <section className="container">
         <Helmet>
           <meta charset="utf-8" />
           <title>Schweiss Technic Academie Kontakt</title>
@@ -15,7 +15,7 @@ class Contact extends Component {
           <link rel="canonical" href="https://stacademie.de/link/contact" />
         </Helmet>
 
-        <div className="content-container">
+        <div className="contents">
           <Map
             className="picture"
             id="map"
@@ -27,11 +27,11 @@ class Contact extends Component {
               let marker = new window.google.maps.Marker({
                 position: { lat: 51.40102, lng: 6.77131},
                 map: map,
-                title: 'Schweiss Technic Academie'
+                title: 'Schweiß Technik Akademie'
               });
             }}
           />
-          <div className="contact">
+          <div className="contact ">
             <h1>Schweiß Technik Akademie</h1>
 
             <p><a href="https://www.google.de/maps/dir/?api=1&destination=In+Schlenk+86%2C+47055+Duisburg">Im Schlenk 86, 47055 Duisburg</a></p>

@@ -12,11 +12,12 @@
   border-radius: 15px;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
   .picture {
-    overflow: hidden;
     max-width: 50%;
     margin: 3em 1.5em;
     img {
       width: 100%;
+      position: sticky;
+      top: 1rem;
     }
   }
   .content {
@@ -52,23 +53,22 @@
 }
 
 //additional classes
-.quote{
+.quote {
   text-align: center;
   box-shadow: none;
   .content {
     flex-basis: 100%;
     margin: 1.5em;
   }
-  h1::before,h1::after{
-    font-size:1.5em;
+  h1::before,
+  h1::after {
+    font-size: 1.5em;
   }
-  h1::before{
-    content:open-quote;
-   
+  h1::before {
+    content: open-quote;
   }
-  h1::after{
-    content:close-quote;
-  
+  h1::after {
+    content: close-quote;
   }
 }
 .editButtons {
@@ -126,9 +126,10 @@
     margin-top: 1em;
     .picture {
       max-width: 100%;
-      margin: 0;     
+      margin: 0;
     }
-    .content {
+    .content,
+    .contact {
       flex-basis: 100%;
       margin: 1rem 0.5rem;
     }

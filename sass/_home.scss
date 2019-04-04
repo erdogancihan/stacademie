@@ -11,7 +11,7 @@ a {
 
 .showtime {
   position: relative;
-  max-height: 75vh;
+  max-height: calc(100vh - 2.2rem - 60px);
   max-width: 1200px;
   padding: 0;
   margin: 0 1rem;
@@ -54,9 +54,10 @@ a {
     }
   }
   @include mediamax($sm) {
-   #rightArrow,#leftArrow{
-    font-size: 30px;
-   }
+    #rightArrow,
+    #leftArrow {
+      font-size: 30px;
+    }
   }
 }
 
@@ -74,6 +75,7 @@ a {
   }
 }
 .showtime__text {
+  text-shadow:0px 0px 10px #000;
   z-index: 1;
   position: absolute;
   top: 55%;
@@ -97,10 +99,10 @@ a {
     letter-spacing: 1px;
   }
   @include mediamax($sm) {
-    margin-left:20px;
-    top:70%;
+    margin-left: 20px;
+    top: 70%;
     width: 280px;
-    h1{
+    h1 {
       font-size: 1rem;
     }
     p {
