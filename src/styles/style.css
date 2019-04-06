@@ -62,6 +62,16 @@ table {
   border-spacing: 0;
 }
 
+/* line 51, C:/Users/erd/Desktop/web development/STAcademie/sass/_reset.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 54, C:/Users/erd/Desktop/web development/STAcademie/sass/_reset.scss */
+em {
+  font-style: italic;
+}
+
 /* ////////////// Break Points ///////////////*/
 /*Media Quaries*/
 /* line 1, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
@@ -760,72 +770,86 @@ a {
   margin: 1.5em;
 }
 
-/* line 28, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.contents h1,
-.contents h2,
-.contents h3 {
+/* line 26, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.contents .content h1,
+.contents .content h2,
+.contents .content h3 {
   color: #035196;
   text-transform: uppercase;
+  margin-bottom: 1em;
 }
 
-/* line 34, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.contents h1 {
+/* line 33, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.contents .content h1 {
   font-size: 2em;
+}
+
+/* line 36, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.contents .content h2 {
+  font-size: 1.8em;
+}
+
+/* line 39, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.contents .content h3 {
+  font-size: 1.5em;
+}
+
+/* line 42, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.contents .content h3,
+.contents .content p {
   margin-bottom: 1em;
 }
 
-/* line 38, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.contents h2 {
-  margin-bottom: 1.5em;
-}
-
-/* line 41, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.contents h3,
-.contents p {
-  margin-bottom: 1em;
-}
-
-/* line 45, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.contents p {
+/* line 46, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.contents .content p {
   color: #222222;
   line-height: 1.5em;
   text-align: justify;
 }
 
-/* line 50, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.contents li {
+/* line 51, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.contents .content ol {
+  margin-left: 2rem;
   padding-bottom: 0.5em;
+  list-style-type: decimal;
 }
 
 /* line 56, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.contents .content ul {
+  margin-left: 2rem;
+  padding-bottom: 0.5em;
+  list-style: disc;
+}
+
+/* line 65, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .quote {
   text-align: center;
   box-shadow: none;
 }
 
-/* line 59, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 68, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .quote .content {
   flex-basis: 100%;
   margin: 1.5em;
 }
 
-/* line 63, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 72, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .quote h1::before,
 .quote h1::after {
   font-size: 1.5em;
 }
 
-/* line 67, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 76, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .quote h1::before {
   content: open-quote;
 }
 
-/* line 70, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 79, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .quote h1::after {
   content: close-quote;
 }
 
-/* line 74, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 83, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .editButtons {
   cursor: pointer;
   max-width: 1200px;
@@ -834,12 +858,12 @@ a {
   background: #fefefe;
 }
 
-/* line 81, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 90, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .hide {
   display: none;
 }
 
-/* line 85, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 94, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .editor {
   padding: 0em;
   margin-top: 5em;
@@ -847,12 +871,12 @@ a {
   background: #fefefe;
 }
 
-/* line 91, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 100, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .add-image {
   display: flex;
 }
 
-/* line 94, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 103, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .custom-file-upload {
   display: inline-block;
   display: flex;
@@ -871,7 +895,7 @@ a {
   font-weight: 400;
 }
 
-/* line 110, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 119, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .custom-file-upload:hover {
   color: #fefefe;
   background: #74c5f3;
@@ -879,7 +903,7 @@ a {
   cursor: pointer;
 }
 
-/* line 117, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 126, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .editor__edit {
   border-radius: 15px;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
@@ -887,17 +911,17 @@ a {
 }
 
 @media only screen and (max-width: 740px) {
-  /* line 124, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+  /* line 133, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
   .contents {
     flex-wrap: wrap;
     margin-top: 1em;
   }
-  /* line 127, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+  /* line 136, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
   .contents .picture {
     max-width: 100%;
     margin: 0;
   }
-  /* line 131, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+  /* line 140, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
   .contents .content,
   .contents .contact {
     flex-basis: 100%;

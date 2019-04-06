@@ -14,7 +14,7 @@ class Content extends Component {
             )}
 
             <div
-              className="content"
+              className="content CKeditor "
               dangerouslySetInnerHTML={{ __html: content.content }}
             />
           </div>

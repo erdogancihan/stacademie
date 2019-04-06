@@ -23,32 +23,41 @@
   .content {
     flex-basis: 70%;
     margin: 1.5em;
-  }
-
-  h1,
-  h2,
-  h3 {
-    color: $secondary-text;
-    text-transform: uppercase;
-  }
-  h1 {
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-  h2 {
-    margin-bottom: 1.5em;
-  }
-  h3,
-  p {
-    margin-bottom: 1em;
-  }
-  p {
-    color: $primary-text;
-    line-height: 1.5em;
-    text-align: justify;
-  }
-  li {
-    padding-bottom: 0.5em;
+    h1,
+    h2,
+    h3 {
+      color: $secondary-text;
+      text-transform: uppercase;
+      margin-bottom: 1em;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    h2 {
+      font-size: 1.8em;
+    }
+    h3 {
+      font-size: 1.5em;
+    }
+    h3,
+    p {
+      margin-bottom: 1em;
+    }
+    p {
+      color: $primary-text;
+      line-height: 1.5em;
+      text-align: justify;
+    }
+    ol {
+      margin-left: 2rem;
+      padding-bottom: 0.5em;
+      list-style-type: decimal;
+    }
+    ul {
+      margin-left: 2rem;
+      padding-bottom: 0.5em;
+      list-style: disc;
+    }
   }
 }
 
