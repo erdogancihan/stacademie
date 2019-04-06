@@ -41,11 +41,11 @@
   }
 }
 .disabled-link {
-    cursor: auto!important;
-  
+  cursor: auto !important;
+
   &:hover {
-    color: initial!important;
-    background-color: initial!important;
+    color: initial !important;
+    background-color: initial !important;
   }
 }
 
@@ -53,23 +53,22 @@
   z-index: 10;
   top: 0px;
   padding: 0;
-  margin: 0 1rem;
+  margin: 0 calc(1rem + 3%);
   display: flex;
   align-items: center;
   justify-items: flex-end;
   background-color: $nav-bg;
   color: $nav-link;
-  width: 100%;
+  width: calc(100%-2rem);
   min-height: 60px;
   outline: none;
 }
 .navbar-brand {
-  //border: 1px solid green;
   width: 230px;
   height: 60px;
-  //padding: 1em 0.5em;
   font-size: 1.5em;
   background: $nav-bg;
+  font-weight: bold;
   a {
     color: $nav-link;
   }
@@ -94,6 +93,7 @@
   &:hover {
     background: $nav-link-bg-hover;
     transition: all 500ms ease-in-out;
+    color: $nav-link-hover;
     a {
       color: $nav-link-hover;
     }
@@ -151,7 +151,7 @@
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: calc(100%-2rem);
     padding-left: 0.5em;
   }
   .navbar-items-right {

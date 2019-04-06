@@ -11,9 +11,11 @@
   background: $body-bg;
   border-radius: 15px;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
+  
   .picture {
-    max-width: 50%;
+    max-width: 45%;
     margin: 3em 1.5em;
+
     img {
       width: 100%;
       position: sticky;
@@ -21,14 +23,20 @@
     }
   }
   .content {
+    position: relative;
     flex-basis: 70%;
     margin: 1.5em;
+    img {
+      max-width: 50%;
+      margin: 0.5em;
+    }
     h1,
     h2,
     h3 {
       color: $secondary-text;
       text-transform: uppercase;
       margin-bottom: 1em;
+      font-weight: bold;
     }
     h1 {
       font-size: 2em;
@@ -49,14 +57,54 @@
       text-align: justify;
     }
     ol {
-      margin-left: 2rem;
+      padding-left: 1rem;
       padding-bottom: 0.5em;
       list-style-type: decimal;
     }
     ul {
-      margin-left: 2rem;
+      padding-left: 1rem;
       padding-bottom: 0.5em;
       list-style: disc;
+    }
+    li {
+      margin-bottom: 0.5em;
+      line-height: 1.5em;
+    }
+    blockquote {
+      margin: 0 2em;
+      width: calc(100% - 4em);
+      border-left: 5px solid rgba(0, 0, 0, 0.4);
+      padding: 0 2em;
+      padding-bottom: 0;
+      font-style: italic;
+      line-height: 1.5em;
+      font-weight: 500;
+      color: $secondary-text;
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+    blockquote::before,
+    blockquote::after {
+      content: "";
+      display: block;
+      height: 1em;
+    }
+    blockquote::after {
+      margin-bottom: 1em;
+    }
+    table {
+      margin: 1em auto;
+      th {
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $secondary-text;
+      }
+      tr,
+      td,
+      th {
+        border: 1px solid lighten($secondary-text, 10);
+        padding: 0.5em 1em;
+      }
     }
   }
 }
@@ -133,14 +181,19 @@
   .contents {
     flex-wrap: wrap;
     margin-top: 1em;
+    overflow: hidden;
     .picture {
       max-width: 100%;
       margin: 0;
+      img {
+        top: 0;
+      }
     }
     .content,
     .contact {
       flex-basis: 100%;
-      margin: 1rem 0.5rem;
+      max-width: calc(100% - 2rem);
+      margin: 1rem 1rem;
     }
   }
 }

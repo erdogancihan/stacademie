@@ -1,6 +1,7 @@
 .contact {
   flex-basis: 70%;
   margin: 1.5em;
+  justify-content: center;
   a {
     color: $secondary-text;
   }
@@ -8,7 +9,13 @@
     text-align: center;
   }
   h1 {
+    font-size:1.5em;
+    font-weight:bold;
     padding-top: 1em;
     text-align: center;
+    color:$secondary-text;
+  }
+  p,h1{
+    margin-bottom:1em;
   }
 }
