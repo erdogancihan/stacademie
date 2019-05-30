@@ -9,10 +9,12 @@ import {
 export class Topnav extends Component {
   componentDidMount() {
     //gets the language from the local stroge.
-    const lang = localStorage.getItem("language");
+    let lang = localStorage.getItem("language");
     //dispatches action to change the language from the reducer.
-    this.props.setLanguage(lang);
+   if(lang==="null"||!lang)lang="de";
+    this.props.setLanguage(lang); 
     this.props.getLanguage();
+    
   }
 
   //dispatches an action to change the language.
@@ -63,7 +65,7 @@ export class Topnav extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state);
+  //console.log(state);
   return {
     language: state.language
   };

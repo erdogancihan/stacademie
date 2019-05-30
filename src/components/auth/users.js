@@ -65,7 +65,7 @@ export class Users extends Component {
         </ul>
       </div>
     ) : (
-      <Redirect to="/" />
+   <Redirect to="/" />
     );
   }
 }

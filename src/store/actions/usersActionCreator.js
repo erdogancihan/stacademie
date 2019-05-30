@@ -189,6 +189,7 @@ export const isAdmin = user => {
         .getIdTokenResult()
         .then(idTokenResult => {
           isAdmn = idTokenResult.claims.admin;
+          console.log(isAdmn)
         })
         .then(() => {
           dispatch(Claim(isAdmn));

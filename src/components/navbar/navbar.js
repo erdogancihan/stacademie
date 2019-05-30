@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, Redirect  } from "react-router-dom";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
@@ -15,7 +15,9 @@ import Admin from "./admin";
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      user:"user"
+    };
   }
 
   static contextTypes = {
@@ -29,7 +31,7 @@ class Navbar extends Component {
 
     authListener.onAuthStateChanged(user => {
       if (user) {
-        if (auth.uid && auth.emailVerified === true) {
+        if (auth.emailVerified === true) {
           firestore.onSnapshot({
             collection: "users",
             doc: auth.uid,
@@ -45,10 +47,13 @@ class Navbar extends Component {
     const authListener = firebase.auth();
     authListener.onAuthStateChanged(user => {
       this.props.isAdmin(user);
+   
     });
   }
+
   LogOut = () => {
     this.props.logOut();
+    
   };
 
   toggleClass = () => {
@@ -70,8 +75,8 @@ class Navbar extends Component {
   };
 
   render() {
-    const { strings, auth, language } = this.props;
-
+    const { strings, auth, language, isAdmin } = this.props;
+console.log(auth)
     return (
       <nav className=" navbar notranslate">
         <CookieConsent buttonText="OK">
@@ -126,8 +131,7 @@ class Navbar extends Component {
         </ul>
 
         <ul className="navbar-items navbar-items-right">
-          {auth.isEmpty === true ? null : auth.email ===
-            "erdogancihann@gmail.com" ? (
+          {auth.isEmpty === true ? null : isAdmin ? (
             <React.Fragment>
               <Admin strings={strings} toggleClass={this.toggleClass} />
               <LoggedIn
@@ -152,7 +156,7 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = state => {
-  //console.log(state);
+  console.log(state);
   return {
     language: state.language.language,
     user: state.firestore.data.user,

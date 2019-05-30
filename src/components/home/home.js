@@ -50,8 +50,8 @@ class Home extends Component {
       });
     } else if (e.target.id === "right") {
       this.setState({
-        slideIndex: (this.state.slideIndex + 1) % 4,
-        slideDirection: "slide-left"
+        slideIndex: (this.state.slideIndex +1) % 4,
+        slideDirection: "slide-right"
       });
     }
   };

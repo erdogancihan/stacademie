@@ -12,12 +12,13 @@ import rootReducer from "../store/reducers/rootReducer";
 
 // Initialize Firebase
 var fbConfig = {
-  apiKey: "AIzaSyCffrlSKjxZ3u4F6Ct79SBSxKTDYwd4cQY",
-  authDomain: "stacademie-bf4b9.firebaseapp.com",
-  databaseURL: "https://stacademie-bf4b9.firebaseio.com",
-  projectId: "stacademie-bf4b9",
-  storageBucket: "stacademie-bf4b9.appspot.com",
-  messagingSenderId: "824538753331"
+  apiKey: "AIzaSyCXKtDmzVbwuKDTa-8MyHZgsKBpEUrgFT4",
+  authDomain: "stakademi-65bcc.firebaseapp.com",
+  databaseURL: "https://stakademi-65bcc.firebaseio.com",
+  projectId: "stakademi-65bcc",
+  storageBucket: "stakademi-65bcc.appspot.com",
+  messagingSenderId: "1080959195235",
+  appId: "1:1080959195235:web:cae14c78b9ff5c7f"
 };
 
 

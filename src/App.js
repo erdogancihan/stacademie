@@ -22,7 +22,7 @@ class App extends Component {
             <meta charset="utf-8" />
             <title>Schweiß Technik Akademie</title>
             <meta name="description" content="Schweiß Technik Akademie" />
-            <link rel="canonical" href="/" />
+            <link rel="canonical" href="https://st-akademie.de" />
           </Helmet>
           <Topnav />
           <Route>

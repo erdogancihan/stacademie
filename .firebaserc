@@ -1,6 +1,7 @@
 {
   "projects": {
-    "sta": "stacademie",
-    "stacademie": "stacademie-bf4b9"
+    "sta": "stakademi",
+    "stacademie": "stakademi-65bcc",
+    "default": "stakademi-65bcc"
   }
 }

@@ -12,7 +12,7 @@ class Contact extends Component {
             name="description"
             content="Schweiss Technic Academie Kontakt"
           />
-          <link rel="canonical" href="https://stacademie.de/link/contact" />
+          <link rel="canonical" href="https://st-akademie.de/link/contact" />
         </Helmet>
 
         <div className="contents">
@@ -31,7 +31,7 @@ class Contact extends Component {
               });
             }}
           />
-          <div className="contact ">
+          <address className="contact ">
             <h1>Schweiß Technik Akademie</h1>
 
             <p><a href="https://www.google.de/maps/dir/?api=1&destination=In+Schlenk+86%2C+47055+Duisburg">Im Schlenk 86, 47055 Duisburg</a></p>
@@ -39,12 +39,12 @@ class Contact extends Component {
             <p>Fax: +49 (0) 203 7128 1412</p>
 
             <p>
-              <a href="mailto:stacademie@gmail.com">
+              <a href="mailto:demirlikan@st-akademie.de">
                 <i className="fas fa-envelope" />{" "}
-                stacademie@gmail.com
+                demirlikan@st-akademie.de
               </a>{" "}
             </p>
-          </div>
+          </address>
         </div>
       </section>
     );
