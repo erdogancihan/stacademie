@@ -25,7 +25,7 @@ export class FooterContainer extends Component {
           </li>
         </ul>
 
-        <p> &copy; 2019 stacademy.de All Rights Reserved.</p>
+        <p> &copy; 2019 st-akademie.de All Rights Reserved.</p>
         <p>Developed by E.C.</p>
       </footer>
     );

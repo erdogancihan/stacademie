@@ -7,10 +7,10 @@ class Contact extends Component {
       <section className="container">
         <Helmet>
           <meta charset="utf-8" />
-          <title>Schweiss Technic Academie Kontakt</title>
+          <title>Schweiß Technik Akademie Kontakt</title>
           <meta
             name="description"
-            content="Schweiss Technic Academie Kontakt"
+            content="Schweiß Technik Akademie Kontakt"
           />
           <link rel="canonical" href="https://st-akademie.de/link/contact" />
         </Helmet>

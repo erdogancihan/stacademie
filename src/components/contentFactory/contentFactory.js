@@ -97,7 +97,7 @@ class ContentFactory extends Component {
             name="description"
             content={contentData[lang].metaData.description}
           />
-          <link rel="canonical" href={"https://stacademie.de/" + collection} />
+          <link rel="canonical" href={"https://st-akademie.de/" + collection} />
         </Helmet>
         {this.state.edit === true ? (
           <EditorContainer

@@ -11,10 +11,9 @@ export class Topnav extends Component {
     //gets the language from the local stroge.
     let lang = localStorage.getItem("language");
     //dispatches action to change the language from the reducer.
-   if(lang==="null"||!lang)lang="de";
-    this.props.setLanguage(lang); 
+    if (lang === "null" || !lang) lang = "de";
+    this.props.setLanguage(lang);
     this.props.getLanguage();
-    
   }
 
   //dispatches an action to change the language.
@@ -56,7 +55,7 @@ export class Topnav extends Component {
             de
           </li>
 
-          <li className="nav-item disabled-link" id="en" >
+          <li className="nav-item disabled-link" id="en">
             en
           </li>
         </ul>
