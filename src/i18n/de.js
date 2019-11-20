@@ -45,49 +45,60 @@ export default {
       "Your password has changed successfully. Please login.",
     passwordsNotMatch:
       "Passwords you entered do not match. Please type your password again",
-    userAgreement:
-      "By clicking Signup, you agree to Terms and Conditions.",
-    emailNotVerified:"Your email is not verified. Please check your mailbox and verify your email address." 
+    userAgreement: "By clicking Signup, you agree to Terms and Conditions.",
+    emailNotVerified:
+      "Your email is not verified. Please check your mailbox and verify your email address."
   },
   navbar: {
-    offers:"Angeboten",
-    furtherEducation:"Weiter Bildung",
-    employer:"Arbeitsgeber",
-    certificates:"Zertifikat / Massnahmen",
-    impressum:"Impressum",
+    offers: "Aus-& Weiterbildung",
     about: "Über uns",
-    terms: "Terms",
-    contact:"Kontact",
+    register: "Jetzt Anmelden",
+    contact: "Kontakt",
     login: "Login",
-    logout: "Logout",
-   },
-   
-   offers:{
-    module1:"WIG Stahl Schweißer/in",
-    module2:"WIG Edelstahl Schweißer/in",
-    module3:"WIG Spiegel Schweißer/in",
-    module4:"WIG/E Edelstahl Kombi Schweißer/in",
-    module5:"WIG / E Stahl Kombi Schweißer/in",
-    module6:"Kraftwerkschweißer/in P-91-92-24-32/CrNi",
-    module7:"MAG Fühldrat Grundkurs",
-    module8:"MAG Fühldraht Aufbaukurs",
-    module9:"Betonstahl Schweißer/in",
-    module10:"Elektroden Schweißer/in",
+    logout: "Logout"
   },
 
+  offers: {
+    module1: "WIG Stahl Schweißer",
+    module2: "WIG Edel Stahl Schweißer",
+    module3: "WIG Spiegel Schweißer",
+    module4: "WIG / Elektrode Edelstahl Kombi Schweißer",
+    module5: "WIG/ Elektrode Stahl Kombi Schweißer",
+    module6: "Kraftwerkschweißer CriN",
+    module7: "MAG Fülldrat Grundkurs",
+    module8: "MAG Fühldraht Aufbaukurs",
+    module9: "Betonstahl Schweißer",
+    module10: "Elektroden Schweißer"
+  },
+  about: {
+    module1: "Wer sind wir?",
+    module2: "Unser Team",
+    module3: "Unsere Ziel",
+    module4: "Standort",
+    module5: "Unsere Zertifikaten",
+    module6: "Impressum"    
+  },
 
-  errorMessage:{
-    defaultMessage:"There is an error",
-    invalidEmail:"Provided email address is not valid.",
-    invalidPassword:"Provided password is invalid. It must be at least six characters.",
-    maximumUserCountExceeded:"The maximum allowed number of users to import is exceeded.",
-    emailAlreadyExists:"The provided email is already in use by an existing user. Each user must have a unique email.",
-    userNotFound:"There is no existing user record corresponding to the provided identifier.",
-    internalError:"The Authentication server encountered an unexpected error",
-    authNetworkRequestFailed:"A network error (such as timeout, interrupted connection or unreachable host) has occurred.",
-    wrongPassword:"The password is invalid or the user does not have a password.",
-    emailAlreadyInUse:"The email address is already in use by another account.",
-    weakPassword:"Password should be at least 6 characters",
-    emailNotVerified:"Your Email Address is not verified. Please check your mailbox and verify your email address." 
+  errorMessage: {
+    defaultMessage: "There is an error",
+    invalidEmail: "Provided email address is not valid.",
+    invalidPassword:
+      "Provided password is invalid. It must be at least six characters.",
+    maximumUserCountExceeded:
+      "The maximum allowed number of users to import is exceeded.",
+    emailAlreadyExists:
+      "The provided email is already in use by an existing user. Each user must have a unique email.",
+    userNotFound:
+      "There is no existing user record corresponding to the provided identifier.",
+    internalError: "The Authentication server encountered an unexpected error",
+    authNetworkRequestFailed:
+      "A network error (such as timeout, interrupted connection or unreachable host) has occurred.",
+    wrongPassword:
+      "The password is invalid or the user does not have a password.",
+    emailAlreadyInUse:
+      "The email address is already in use by another account.",
+    weakPassword: "Password should be at least 6 characters",
+    emailNotVerified:
+      "Your Email Address is not verified. Please check your mailbox and verify your email address."
   }
 };

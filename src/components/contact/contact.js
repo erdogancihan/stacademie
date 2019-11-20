@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import Map from "./map";
+import logo from "../../images/logo/logo.jpg";
+
 class Contact extends Component {
   render() {
     return (
@@ -32,16 +34,15 @@ class Contact extends Component {
             }}
           />
           <address className="contact ">
-            <h1>Schweiß Technik Akademie</h1>
-
+          <img className="contact-logo" src={logo} alt="Schweiß Technik Akademie" />
             <p><a href="https://www.google.de/maps/dir/?api=1&destination=In+Schlenk+86%2C+47055+Duisburg">Im Schlenk 86, 47055 Duisburg</a></p>
             <p> <a href="tel:+4920371281413">Tel: +49 (0) 203 7128 1413</a></p>
             <p>Fax: +49 (0) 203 7128 1412</p>
 
             <p>
-              <a href="mailto:demirlikan@st-akademie.de">
+              <a href="mailto:info@st-akademie.de">
                 <i className="fas fa-envelope" />{" "}
-                demirlikan@st-akademie.de
+                info@st-akademie.de
               </a>{" "}
             </p>
           </address>

@@ -189,7 +189,6 @@ export const isAdmin = user => {
         .getIdTokenResult()
         .then(idTokenResult => {
           isAdmn = idTokenResult.claims.admin;
-          console.log(isAdmn)
         })
         .then(() => {
           dispatch(Claim(isAdmn));
@@ -205,7 +204,7 @@ export function logOut() {
       .auth()
       .signOut()
       .then(response => {
-        console.log("logged out.")
+        console.log("logged out.");
         dispatch(Success(response));
       })
       .catch(error => {

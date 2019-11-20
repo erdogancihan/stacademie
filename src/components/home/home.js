@@ -4,10 +4,9 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Courses from "./courses";
 import ContentFactory from "../contentFactory/contentFactory";
-import Img1 from "../../images/istockphoto-915567912-2048x2048.jpg";
-import Img2 from "../../images/istockphoto-1050241598-1024x1024.jpg";
-import Img3 from "../../images/Spot-Welding.jpeg";
-import Img4 from "../../images/051.jpg";
+import Img1 from "../../images/banners/banner1.jpg";
+import Img2 from "../../images/banners/banner2.jpg";
+import Img3 from "../../images/banners/banner3.jpg";
 
 class Home extends Component {
   constructor(props) {
@@ -18,25 +17,21 @@ class Home extends Component {
       slideDirection: "",
       showTime: [
         {
-          showtimeTextHeader: "1 WIR HILFE DABEI, IHRE ALIEGE UMZUETEN",
-          showtimeText: "wir hilfe dabei, ihre aliege umzuete.",
+          showtimeTextHeader: "Ausbildungsmöglichkeit mit Job Garantie!!!",
+          showtimeText: "",
           image: Img1
         },
         {
-          showtimeTextHeader: "2 WIR HILFE DABEI, IHRE ALIEGE UMZUETEN",
-          showtimeText: "2 wir hilfe dabei, ihre aliege umzuete.",
+          showtimeTextHeader: "Sie müssen sich nicht um die Kosten kümmern!!!",
+          showtimeText: "",
           image: Img2
         },
         {
-          showtimeTextHeader: "3 WIR HILFE DABEI, IHRE ALIEGE UMZUETEN",
-          showtimeText: "3 wir hilfe dabei, ihre aliege umzuete.",
+          showtimeTextHeader: "Bei uns lernt man die Kunst des Schweißens!!!",
+          showtimeText: "",
           image: Img3
-        },
-        {
-          showtimeTextHeader: "4 WIR HILFE DABEI, IHRE ALIEGE UMZUETEN",
-          showtimeText: "4 wir hilfe dabei, ihre aliege umzuete.",
-          image: Img4
         }
+       
       ]
     };
   }
@@ -45,12 +40,12 @@ class Home extends Component {
   slide = e => {
     if (e.target.id === "left") {
       this.setState({
-        slideIndex: (this.state.slideIndex +3) % 4,
+        slideIndex: (this.state.slideIndex +2) % 3,
         slideDirection: "slide-left"
       });
     } else if (e.target.id === "right") {
       this.setState({
-        slideIndex: (this.state.slideIndex +1) % 4,
+        slideIndex: (this.state.slideIndex +1) % 3,
         slideDirection: "slide-right"
       });
     }
@@ -105,10 +100,11 @@ class Home extends Component {
             </CSSTransition>
           </TransitionGroup>
         </section>
-
+        <ContentFactory link={"home3"} classNames={"banner2"} />
         <ContentFactory link={"home1"} classNames={"home__content"} />
         <Courses strings={strings} lang={lang} />
-        <ContentFactory link={"home2"} classNames={"quote"} />
+        <ContentFactory link={"home2"} classNames={"banner1"} />
+     
       </div>
     );
   }

@@ -1,15 +1,15 @@
 import React from "react";
 import Module from "./module";
-import img1 from "../../images/offers/47ed55411db2a59bdc8d7a525602ae08v1_max_755x425_b3535db83dc50e27c1bb1392364c95a2.jpg";
-import img2 from "../../images/offers/istockphoto-490855086-1024x1024.jpg";
-import img3 from "../../images/offers/istockphoto-519690994-1024x1024.jpg";
-import img4 from "../../images/offers/istockphoto-661410282-1024x1024.jpg";
-import img5 from "../../images/offers/istockphoto-903128166-1024x1024.jpg";
-import img6 from "../../images/offers/istockphoto-915544394-1024x1024.jpg";
-import img7 from "../../images/offers/istockphoto-915574098-1024x1024.jpg";
-import img8 from "../../images/offers/istockphoto-940555806-1024x1024.jpg";
-import img9 from "../../images/offers/istockphoto-967906154-1024x1024.jpg";
-import img10 from "../../images/offers/istockphoto-1025919106-1024x1024.jpg";
+import img1 from "../../images/offers/Resim2.jpg";
+import img2 from "../../images/offers/Resim17.jpg";
+import img3 from "../../images/offers/Resim8.jpg";
+import img4 from "../../images/offers/Resim5.jpg";
+import img5 from "../../images/offers/Resim4.jpg";
+import img6 from "../../images/offers/Resim6.jpg";
+import img7 from "../../images/offers/Resim21.jpg";
+import img8 from "../../images/offers/Resim22.jpg";
+import img9 from "../../images/offers/Resim20.jpg";
+import img10 from "../../images/offers/Resim23.jpg";
 
 
 function Courses({ strings, lang }) {

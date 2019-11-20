@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter, Redirect  } from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
@@ -11,12 +11,13 @@ import Offers from "./offers";
 
 import LoggedIn from "./loggedIn";
 import Admin from "./admin";
+import logo from "../../images/logo/logo1.jpg";
 
 class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user:"user"
+      user: "user"
     };
   }
 
@@ -47,27 +48,25 @@ class Navbar extends Component {
     const authListener = firebase.auth();
     authListener.onAuthStateChanged(user => {
       this.props.isAdmin(user);
-   
     });
   }
 
   LogOut = () => {
     this.props.logOut();
-    
   };
 
   toggleClass = () => {
     //dropdowns menu when window width is LE 740px
     const width = window.outerWidth;
     if (width <= 740) {
-      console.log(width);
       const navs = document.querySelectorAll(".navbar-items");
       navs.forEach(nav => nav.classList.toggle("navbar-toggleShow"));
+     
     }
     const dropDownContent = document.querySelector(".dropdown-content");
     return dropDownContent.classList.value === "dropdown-content drop"
-      ? dropDownContent.classList.remove("drop")
-      : null;
+      ?()=>{ dropDownContent.classList.remove("drop");console.log(dropDownContent, "1")}
+      : console.log(dropDownContent, "2");
   };
 
   setNavlinkClass = path => {
@@ -76,87 +75,93 @@ class Navbar extends Component {
 
   render() {
     const { strings, auth, language, isAdmin } = this.props;
-console.log(auth)
+
     return (
-      <nav className=" navbar notranslate">
-        <CookieConsent buttonText="OK">
-          Diese Website nutzt Cookies, um bestmögliche Funktionalität bieten zu
-          können.
-          <Link
-            to={"/" + language + "/terms"}
-            style={{ color: "#fefefe", textDecoration: "underline" }}
-          >
-            Mehr erfahren
-          </Link>
-        </CookieConsent>
-
-        <div className="navbar-brand">
-          <Link to="/">Schweiß Technik Akademie</Link>
-        </div>
-        <div className=" nav-link-toggle" onClick={this.toggleClass}>
-          <i className="fas fa-bars" />
-        </div>
-        <ul className="navbar-items">
-          <Offers
-            strings={strings}
-            toggleClass={this.toggleClass}
-            language={language}
-          />
-
-          <li className={this.setNavlinkClass("/" + language + "/further")}>
-            <Link to={"/" + language + "/further"} onClick={this.toggleClass}>
-              {strings.navbar.furtherEducation}
-            </Link>
-          </li>
-          <li className={this.setNavlinkClass("/" + language + "/employer")}>
-            <Link to={"/" + language + "/employer"} onClick={this.toggleClass}>
-              {strings.navbar.employer}
-            </Link>
-          </li>
-          <li
-            className={this.setNavlinkClass("/" + language + "/certificates")}
-          >
+      <div>
+        <nav className=" navbar notranslate">
+          <CookieConsent buttonText="OK">
+            Diese Website nutzt Cookies, um bestmögliche Funktionalität bieten
+            zu können.
             <Link
-              to={"/" + language + "/certificates"}
-              onClick={this.toggleClass}
+              to={"/" + language + "/terms"}
+              style={{ color: "#fefefe", textDecoration: "underline" }}
             >
-              {strings.navbar.certificates}
+              Mehr erfahren
             </Link>
-          </li>
-          <li className={this.setNavlinkClass("/" + language + "/about")}>
-            <Link to={"/" + language + "/about"} onClick={this.toggleClass}>
-              {strings.navbar.about}
-            </Link>
-          </li>
-        </ul>
+          </CookieConsent>
 
-        <ul className="navbar-items navbar-items-right">
-          {auth.isEmpty === true ? null : isAdmin ? (
-            <React.Fragment>
-              <Admin strings={strings} toggleClass={this.toggleClass} />
+          <div className="navbar-brand">
+            <Link to="/">
+              {" "}
+              <img
+                className="logo"
+                src={logo}
+                alt="Schweiß Technik Akademie"
+              />{" "}
+              Schweißtechnik Akademie{" "}
+            </Link>
+          </div>
+          <div className=" nav-link-toggle" onClick={this.toggleClass}>
+            <i className="fas fa-bars" />
+          </div>
+          <ul className="navbar-items">
+            <Offers
+              strings={strings.navbar.offers}
+              dropMenu={strings.offers}
+              toggleClass={this.toggleClass}
+              language={language}
+              linkInitial="/module"
+            />
+            <Offers
+              strings={strings.navbar.about}
+              dropMenu={strings.about}
+              toggleClass={this.toggleClass}
+              language={language}
+              linkInitial="/about"
+            />
+            <li className={this.setNavlinkClass("/" + language + "/register")}>
+              <Link
+                to={"/" + language + "/register"}
+                onClick={this.toggleClass}
+              >
+                {strings.navbar.register}
+              </Link>
+            </li>
+            <li className={this.setNavlinkClass("/" + language + "/contact")}>
+              <Link to={"/" + language + "/contact"} onClick={this.toggleClass}>
+                {strings.navbar.contact}
+              </Link>
+            </li>
+          </ul>
+
+          <ul className="navbar-items navbar-items-right">
+            {auth.isEmpty === true ? null : isAdmin ? (
+              <React.Fragment>
+                <Admin strings={strings} toggleClass={this.toggleClass} />
+                <LoggedIn
+                  user={auth}
+                  LogOut={this.LogOut}
+                  strings={strings}
+                  toggleClass={this.toggleClass}
+                />
+              </React.Fragment>
+            ) : (
               <LoggedIn
                 user={auth}
                 LogOut={this.LogOut}
                 strings={strings}
                 toggleClass={this.toggleClass}
               />
-            </React.Fragment>
-          ) : (
-            <LoggedIn
-              user={auth}
-              LogOut={this.LogOut}
-              strings={strings}
-              toggleClass={this.toggleClass}
-            />
-          )}
-        </ul>
-      </nav>
+            )}
+          </ul>
+        </nav>
+        <div id="navbarline" />
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     language: state.language.language,
     user: state.firestore.data.user,
@@ -175,9 +180,6 @@ const mapDispatchToProps = dispatch => {
 
 export default compose(
   withRouter,
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  ),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect()
 )(Navbar);

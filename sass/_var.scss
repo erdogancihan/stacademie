@@ -3,22 +3,24 @@
 
 
 // colors
-$body-bg: rgba(254, 254, 254, 1); //body color
+$body-bg: #fefefe; //body color
 
 //contentFactory
 $primary-text: #222222;
-$secondary-text: #035196;
+$secondary-text:  #201F49;
 $text-white: #fefefe;
 
 // navbar
 $nav-bg: #fefefe;
-$nav-link: $secondary-text;
+$nav-link: #201F49;
 $nav-link-hover: #fefefe;
-$nav-link-bg-hover: #74c5f3;
+$nav-link-bg-hover: #e6332a;
+$nav-line:$nav-link-bg-hover;
 
 //footer
-$footer-bg: #59b0e2;
+$footer-bg: #201F49;
 $footer-text: #fefefe;
+$footer-secondary-text: $footer-text;
 //form
 $form-text: $primary-text;
 $form-border: $secondary-text;

@@ -36,6 +36,7 @@ class ContentFactory extends Component {
     const collections = [
       "home1",
       "home2",
+      "home3",
       "about",
       "employer",
       "further",
@@ -51,7 +52,15 @@ class ContentFactory extends Component {
       "module7",
       "module8",
       "module9",
-      "module10"
+      "module10",
+      "about1",
+      "about2",
+      "about3",
+      "about4",
+      "about6",
+      "about7",
+      "about8",
+
     ];
     const { firestore } = this.context.store;
     collections.forEach(collection => {
@@ -88,6 +97,7 @@ class ContentFactory extends Component {
     };
     const { contentData = defaultPropsData, lang,classNames } = this.props;
     const collection = this.props.collection;
+
     return contentData && contentData[lang] ? (
       <section>
         <Helmet>

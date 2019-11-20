@@ -239,7 +239,7 @@ class EditorContainer extends Component {
                   id={index}
                   onClick={this.removeContent}
                 >
-                  {'"' + index + '"' + " nolu içeriği sil"}
+                  {' " ' + index + ' " ' + " nolu içeriği sil"}
                 </button>
               );
             })}

@@ -11,27 +11,29 @@ class Offers extends Component {
 
   //Handles dopdown Menu
 
-  handleDropdown = (e) => {
-  // e.preventDefault();
-    const dropdownContent = document.getElementById("dropdownContent");
-    return dropdownContent.classList.toggle("drop");
+  handleDropdown = e => {
+    // e.preventDefault();
+    const dropdownContent = document.getElementById(this.props.strings);
+    console.log(dropdownContent);
+    dropdownContent.classList.toggle("drop");
+    return console.log(dropdownContent.classList);
   };
 
   render() {
-    const { strings, toggleClass, language } = this.props;
-    const offersArray = Object.keys(strings.offers).map(i => strings.offers[i]);
-
+    const {
+      dropMenu,
+      toggleClass,
+      language,
+      strings,
+      linkInitial
+    } = this.props;
+    const offersArray = Object.keys(dropMenu).map(i => dropMenu[i]);
     return (
-      <React.Fragment>
-        <li
-          className="nav-link"
-          onClick={this.handleDropdown}
-           >
-          {strings.navbar.offers} <i className="fas fa-sort-down" />
+      <div>
+        <li className="nav-link" onClick={this.handleDropdown}>
+          {strings} <i className="fas fa-sort-down" />
         </li>
-
-        <ul className="dropdown-content" id="dropdownContent"
-        >
+        <ul className="dropdown-content" id={strings}>
           {offersArray.map((module, index) => {
             return (
               <Offer
@@ -41,11 +43,12 @@ class Offers extends Component {
                 toggleClass={toggleClass}
                 handleDropdown={this.handleDropdown}
                 language={language}
+                linkInitial={linkInitial}
               />
             );
           })}
         </ul>
-      </React.Fragment>
+      </div>
     );
   }
 }

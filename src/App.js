@@ -27,12 +27,15 @@ class App extends Component {
           <Topnav />
           <Route>
             <Navbar />
+     
           </Route>
 
           <main>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/contact" component={Contact} /> 
+              <Route path="/en/contact" component={Contact} /> 
+              <Route path="/de/contact" component={Contact} /> 
+              <Route path="/tr/contact" component={Contact} /> 
               <Route path="/en/:link" component={ContentFactory} />
               <Route path="/de/:link" component={ContentFactory} />
               <Route path="/tr/:link" component={ContentFactory} />
