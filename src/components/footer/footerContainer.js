@@ -4,23 +4,39 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import banner from "../../images/logo/logo2.jpg";
+import azav from "../../images/logo/Zz_AZAV_fbg.jpg";
 
 export class FooterContainer extends Component {
+
+  toggleClass = () => {
+     const dropDownContent = document.querySelectorAll(".dropdown-content");
+    dropDownContent.forEach(item => {
+      return item.classList.value !== "dropdown-content drop"
+        ? () => {
+            console.log(item, "1");
+          }
+        : item.classList.remove("drop");
+    });
+  };
   render() {
     const { strings, language } = this.props;
     return (
       <footer className="notranslate">
         <ul className="footer-nav">
-          <li>
+          <li onClick={this.toggleClass}>
+            <Link to={"/" + language + "/contact"}>
+              {strings.navbar.contact}
+            </Link>
+          </li>
+          <li onClick={this.toggleClass}>
             <Link to={"/" + language + "/impressum"}>
-              {strings.navbar.impressum}
+              {strings.footer.impressum}
             </Link>
           </li>
           <li>
-            <Link to={"/" + language + "/terms"}>{strings.navbar.terms}</Link>
-          </li>
-          <li>
-            <Link to={"/contact"}>{strings.navbar.contact}</Link>
+          <div>
+            <img className="footer-azav" src={azav} alt="Azav" />
+          </div>
           </li>
         </ul>
         <div className="footer-info">

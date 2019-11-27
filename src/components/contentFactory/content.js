@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Content extends Component {
   render() {
     const { contents, metaData, className } = this.props;
-    console.log(className)
+ //  console.log(className)
     return contents.map((content,index) => {
       return (
         <div className="container" key={index}>

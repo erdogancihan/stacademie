@@ -52,10 +52,14 @@ export default {
   navbar: {
     offers: "Aus-& Weiterbildung",
     about: "Über uns",
-    register: "Jetzt Anmelden",
+    register: "Jetzt anmelden",
     contact: "Kontakt",
     login: "Login",
     logout: "Logout"
+  },
+
+  footer:{
+    impressum:"Impressum"
   },
 
   offers: {
@@ -71,12 +75,9 @@ export default {
     module10: "Elektroden Schweißer"
   },
   about: {
-    module1: "Wer sind wir?",
-    module2: "Unser Team",
-    module3: "Unsere Ziel",
-    module4: "Standort",
-    module5: "Unsere Zertifikaten",
-    module6: "Impressum"    
+    goal: "Unsere Ziel",
+    place: "Standort",
+    certificates: "Unsere Zertifikaten" 
   },
 
   errorMessage: {

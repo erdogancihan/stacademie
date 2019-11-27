@@ -1,14 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Offer({
-  module,
-  index,
-  toggleClass,
-  handleDropdown,
-  language,
-  linkInitial
-}) {
+function Offer({ module, link, toggleClass, handleDropdown, language }) {
   return (
     <li
       onClick={() => {
@@ -16,7 +9,7 @@ function Offer({
         toggleClass();
       }}
     >
-      <Link to={"/" + language + linkInitial + (index + 1)}>{module}</Link>
+      <Link to={"/" + language + "/" + link}>{module}</Link>
     </li>
   );
 }

@@ -4,7 +4,7 @@ import img1 from "../../images/offers/Resim2.jpg";
 import img2 from "../../images/offers/Resim17.jpg";
 import img3 from "../../images/offers/Resim8.jpg";
 import img4 from "../../images/offers/Resim5.jpg";
-import img5 from "../../images/offers/Resim4.jpg";
+import img5 from "../../images/offers/Resim9.jpg";
 import img6 from "../../images/offers/Resim6.jpg";
 import img7 from "../../images/offers/Resim21.jpg";
 import img8 from "../../images/offers/Resim22.jpg";

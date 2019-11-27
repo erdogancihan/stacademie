@@ -367,29 +367,38 @@ footer .telephone p {
 /* line 25, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
 .footer-nav {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* line 27, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
+/* line 30, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
 .footer-nav li {
   display: inline-block;
   margin: 1.5rem 1rem;
 }
 
-/* line 32, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
+/* line 35, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
 .footer-info {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-/* line 37, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
+/* line 40, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
 .footer-banner {
   display: block;
   height: 190px;
   margin: auto;
 }
 
-/* line 42, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
+/* line 45, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
+.footer-azav {
+  height: 70px;
+  margin: auto;
+}
+
+/* line 49, C:/Users/erd/Desktop/web development/STAcademie/sass/_footer.scss */
 .footer-info p,
 .footer-info a {
   color: #fefefe;
@@ -635,13 +644,13 @@ a {
 @media screen and (max-width: 576px) {
   /* line 77, C:/Users/erd/Desktop/web development/STAcademie/sass/_home.scss */
   .showtime__text {
-    margin-left: 20px;
-    top: 70%;
+    margin-left: 15px;
+    top: 60%;
     width: 280px;
   }
   /* line 105, C:/Users/erd/Desktop/web development/STAcademie/sass/_home.scss */
   .showtime__text h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   /* line 108, C:/Users/erd/Desktop/web development/STAcademie/sass/_home.scss */
   .showtime__text p {
@@ -978,65 +987,94 @@ a {
 }
 
 /* line 132, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.banner1 {
+.banner1,
+.certificates {
   box-shadow: none;
   flex-wrap: wrap;
   border-radius: 15px;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
-}
-
-/* line 138, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.banner1 .picture {
   flex-basis: 100%;
-  max-width: 95%;
-  margin: 1em 1.5em;
 }
 
-/* line 143, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.banner1 .picture img {
-  width: 100%;
-  top: 1rem;
-}
-
-/* line 148, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.banner1 a {
+/* line 140, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.banner1 a,
+.certificates a {
   color: #201F49;
 }
 
-/* line 151, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.banner1 .content {
+/* line 143, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.banner1 h1,
+.certificates h1 {
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+/* line 147, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.banner1 .content,
+.certificates .content {
   flex-basis: 100%;
-  margin: auto;
   margin: 0.5em;
 }
 
-/* line 157, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.banner2 {
+/* line 150, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.banner1 .content img,
+.certificates .content img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 158, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.banner2,
+.place {
   box-shadow: none;
   flex-wrap: wrap;
   border-radius: 15px;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* line 163, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.banner2 .content {
+/* line 165, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.banner2 .content,
+.place .content {
   flex-basis: 100%;
   margin: auto;
   margin: 0.5em;
 }
 
-/* line 168, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.banner2 h1 {
+/* line 170, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.banner2 h1,
+.place h1 {
   text-align: center;
   margin-top: 1em;
 }
 
-/* line 172, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
-.banner2 img {
+/* line 174, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.banner2 img,
+.place img {
   width: 45%;
 }
 
-/* line 177, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 179, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.impressum .content {
+  flex-basis: 100%;
+  margin: auto;
+  margin: 0.5em;
+}
+
+/* line 183, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.impressum .content p {
+  text-align: left;
+  padding-left: 2em;
+}
+
+/* line 188, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+.impressum h1 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+/* line 194, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .editButtons {
   cursor: pointer;
   max-width: 1200px;
@@ -1045,12 +1083,12 @@ a {
   background: #fefefe;
 }
 
-/* line 184, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 201, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .hide {
   display: none;
 }
 
-/* line 188, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 205, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .editor {
   padding: 0em;
   margin-top: 5em;
@@ -1058,12 +1096,12 @@ a {
   background: #fefefe;
 }
 
-/* line 194, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 211, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .add-image {
   display: flex;
 }
 
-/* line 197, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 214, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .custom-file-upload {
   display: inline-block;
   display: flex;
@@ -1082,7 +1120,7 @@ a {
   font-weight: 400;
 }
 
-/* line 213, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 230, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .custom-file-upload:hover {
   color: #fefefe;
   background: #e6332a;
@@ -1090,7 +1128,7 @@ a {
   cursor: pointer;
 }
 
-/* line 220, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+/* line 237, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
 .editor__edit {
   border-radius: 15px;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
@@ -1098,22 +1136,22 @@ a {
 }
 
 @media only screen and (max-width: 740px) {
-  /* line 227, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+  /* line 244, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
   .contents {
     flex-wrap: wrap;
     margin-top: 1em;
     overflow: hidden;
   }
-  /* line 231, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+  /* line 248, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
   .contents .picture {
     max-width: 100%;
     margin: 0;
   }
-  /* line 234, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+  /* line 251, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
   .contents .picture img {
     top: 0;
   }
-  /* line 238, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
+  /* line 256, C:/Users/erd/Desktop/web development/STAcademie/sass/_contentFactory.scss */
   .contents .content,
   .contents .contact {
     flex-basis: 100%;

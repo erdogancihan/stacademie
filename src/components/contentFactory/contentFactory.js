@@ -39,7 +39,6 @@ class ContentFactory extends Component {
       "home3",
       "about",
       "employer",
-      "further",
       "certificates",
       "terms",
       "impressum",
@@ -53,14 +52,10 @@ class ContentFactory extends Component {
       "module8",
       "module9",
       "module10",
-      "about1",
-      "about2",
-      "about3",
-      "about4",
-      "about6",
-      "about7",
-      "about8",
-
+      "goal",
+      "place",
+      
+    
     ];
     const { firestore } = this.context.store;
     collections.forEach(collection => {
@@ -95,9 +90,13 @@ class ContentFactory extends Component {
         metaData: { title: "title", description: "description" }
       }
     };
-    const { contentData = defaultPropsData, lang,classNames } = this.props;
-    const collection = this.props.collection;
 
+    let { contentData = defaultPropsData, lang, classNames } = this.props;
+    let collection = this.props.collection;
+
+    if (this.props.match) {
+      classNames = this.props.match.params.link;
+    }
     return contentData && contentData[lang] ? (
       <section>
         <Helmet>
@@ -121,7 +120,7 @@ class ContentFactory extends Component {
           <Content
             contents={contentData[lang].contents}
             metaData={contentData[lang].metaData}
-            className={"contents "+ classNames  }
+            className={"contents " + classNames}
           />
         )}
 
@@ -158,7 +157,7 @@ class ContentFactory extends Component {
 }
 
 const mapStateToProps = (state, props) => {
-  //console.log(props);
+  // console.log(props);
   let collection = props.match ? props.match.params.link : props.link;
   return {
     lang: state.language.language,

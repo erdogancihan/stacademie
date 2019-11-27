@@ -24,6 +24,9 @@ footer {
 }
 .footer-nav {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   li {
     display: inline-block;
     margin: 1.5rem 1rem;
@@ -37,6 +40,10 @@ footer {
 .footer-banner {
   display: block;
   height: 190px;
+  margin: auto;
+}
+.footer-azav {
+  height: 70px;
   margin: auto;
 }
 .footer-info p,

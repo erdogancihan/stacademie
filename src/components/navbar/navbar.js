@@ -61,12 +61,17 @@ class Navbar extends Component {
     if (width <= 740) {
       const navs = document.querySelectorAll(".navbar-items");
       navs.forEach(nav => nav.classList.toggle("navbar-toggleShow"));
-     
     }
-    const dropDownContent = document.querySelector(".dropdown-content");
-    return dropDownContent.classList.value === "dropdown-content drop"
-      ?()=>{ dropDownContent.classList.remove("drop");console.log(dropDownContent, "1")}
-      : console.log(dropDownContent, "2");
+
+    const dropDownContent = document.querySelectorAll(".dropdown-content");
+
+    dropDownContent.forEach(item => {
+      return item.classList.value !== "dropdown-content drop"
+        ? () => {
+            console.log(item, "1");
+          }
+        : item.classList.remove("drop");
+    });
   };
 
   setNavlinkClass = path => {
@@ -90,7 +95,7 @@ class Navbar extends Component {
             </Link>
           </CookieConsent>
 
-          <div className="navbar-brand">
+          <div className="navbar-brand" onClick={this.toggleClass}>
             <Link to="/">
               {" "}
               <img

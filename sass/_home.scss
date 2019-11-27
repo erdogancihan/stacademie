@@ -99,11 +99,11 @@ a {
     letter-spacing: 1px;
   }
   @include mediamax($sm) {
-    margin-left: 20px;
-    top: 70%;
+    margin-left: 15px;
+    top: 60%;
     width: 280px;
     h1 {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
     p {
       display: none;
