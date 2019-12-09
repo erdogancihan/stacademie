@@ -293,22 +293,22 @@ em {
     flex-direction: column;
     align-items: center;
     width: calc(100%-2rem);
-    padding-left: 0.5em;
+    padding-left: 0em;
   }
   /* line 182, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
   .navbar-brand {
     margin: auto;
     margin-bottom: 1.2rem;
   }
-  /* line 186, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
+  /* line 187, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
   .navbar-items-right {
     margin-left: 0;
   }
-  /* line 189, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
+  /* line 190, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
   .navbar-items {
     display: none;
   }
-  /* line 193, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
+  /* line 194, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
   .nav-link-toggle {
     display: initial;
     align-self: flex-end;
@@ -317,16 +317,16 @@ em {
     padding: 1em 0.5em;
     cursor: pointer;
   }
-  /* line 201, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
+  /* line 202, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
   .navbar-toggleShow {
     display: flex;
   }
-  /* line 205, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
+  /* line 206, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
   .drop {
     top: 0;
     position: relative;
   }
-  /* line 210, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
+  /* line 211, C:/Users/erd/Desktop/web development/STAcademie/sass/_navbar.scss */
   .dropdown-content li {
     padding: 0.4em 1em;
   }

@@ -55,14 +55,18 @@ class Navbar extends Component {
     this.props.logOut();
   };
 
-  toggleClass = () => {
+  toggleClass = (params = "") => {
     //dropdowns menu when window width is LE 740px
     const width = window.outerWidth;
     if (width <= 740) {
-      const navs = document.querySelectorAll(".navbar-items");
-      navs.forEach(nav => nav.classList.toggle("navbar-toggleShow"));
+      if (params === "navbar-brand") {
+        const navs = document.querySelectorAll(".navbar-items");
+        navs.forEach(nav => nav.classList.remove("navbar-toggleShow"));
+      }else{
+        const navs = document.querySelectorAll(".navbar-items");
+        navs.forEach(nav => nav.classList.toggle("navbar-toggleShow"));
+      }
     }
-
     const dropDownContent = document.querySelectorAll(".dropdown-content");
 
     dropDownContent.forEach(item => {
@@ -95,7 +99,10 @@ class Navbar extends Component {
             </Link>
           </CookieConsent>
 
-          <div className="navbar-brand" onClick={this.toggleClass}>
+          <div
+            className="navbar-brand"
+            onClick={() => this.toggleClass("navbar-brand")}
+          >
             <Link to="/">
               {" "}
               <img

@@ -66,8 +66,6 @@ export default {
     module1: "WIG Stahl Schweißer",
     module2: "WIG Edel Stahl Schweißer",
     module3: "WIG Spiegel Schweißer",
-    module4: "WIG / Elektrode Edelstahl Kombi Schweißer",
-    module5: "WIG/ Elektrode Stahl Kombi Schweißer",
     module6: "Kraftwerkschweißer CriN",
     module7: "MAG Fülldrat Grundkurs",
     module8: "MAG Fühldraht Aufbaukurs",
