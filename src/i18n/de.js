@@ -58,8 +58,8 @@ export default {
     logout: "Logout"
   },
 
-  footer:{
-    impressum:"Impressum"
+  footer: {
+    impressum: "Impressum"
   },
 
   offers: {
@@ -75,9 +75,21 @@ export default {
   about: {
     goal: "Unsere Ziel",
     place: "Standort",
-    certificates: "Unsere Zertifikaten" 
+    certificates: "Unsere Zertifikaten"
   },
-
+  register: {
+    title: "Jetzt Anmelden",
+    description: "Jetzt Anmelden",
+    name: "Ihr Name",
+    email: "Ihre E-Mail Adresse",
+    telephone: "Ihre Telefonnummer",
+    message: "Ihre Nachricht",
+    callme: "Bitte rufen Sie mich unter der oben stehenden Nummmer zurück.",
+    accept:
+      "Ich erklare mich damit einverstanden, dass die Schweißtechnik Akademie GmbH meine Angaben speichert und zur Beantwortung meiner Anfrage verwenden darf.",
+    send: "Send",
+    success:"Nachricht gesendet."
+  },
   errorMessage: {
     defaultMessage: "There is an error",
     invalidEmail: "Provided email address is not valid.",

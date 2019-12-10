@@ -108,7 +108,7 @@ class Navbar extends Component {
               <img
                 className="logo"
                 src={logo}
-                alt="Schweiß Technik Akademie"
+                alt="Schweißtechnik Akademie GmbH"
               />{" "}
               Schweißtechnik Akademie{" "}
             </Link>

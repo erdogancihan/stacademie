@@ -1,0 +1,94 @@
+.register {
+  max-width: 600px;
+  h1,
+  h2,
+  h3 {
+    color: $secondary-text;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-align: center;
+  }
+  h1 {
+    margin-top: 1em;
+    font-size: 2em;
+  }
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin: 0.5em;
+}
+label {
+  min-width: 120px;
+  font-weight: bold;
+}
+input,
+textarea {
+  display: block;
+  border: 1px solid $form-border;
+  color: $form-text;
+  border-radius: 15px;
+  height: 2.5em;
+  width: (95%);
+  outline: none;
+  padding: 0 0.5em;
+  margin: 0.5em 1em;
+  &::placeholder {
+    color: lighten($form-text, $amount: 60);
+  }
+}
+.registerCheckbox {
+  display: flex;
+  align-items: center;
+  input {
+    margin-left: calc(120px + 2em);
+    display: initial;
+    width: auto;
+  }
+}
+.message {
+  padding-top: 0.8em;
+  height: 10em;
+}
+
+button {
+  margin: .5em auto;
+  padding: 0.5em; 
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1em;
+  outline: none;
+}
+.signup-message {
+  max-width: 300px;
+  margin: auto;
+  p {
+    text-align: center;
+  }
+}
+.error {
+  color: red;
+}
+
+.responseText{
+margin:auto;
+margin-bottom:2em;
+margin-top:0em;
+text-align: center;
+font-size: 1.2em;
+color:green;
+font-weight: 600;
+}
+@include mediamax($sm) {
+  .form-group {
+    flex-wrap: wrap;
+  }
+  .registerCheckbox {
+    input {
+      margin-left: 2em;
+    }
+  }
+}

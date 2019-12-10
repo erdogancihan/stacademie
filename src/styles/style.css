@@ -404,120 +404,6 @@ footer .telephone p {
   color: #fefefe;
 }
 
-/* line 1, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.authentication {
-  max-width: 800px;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  margin: auto;
-  padding: 0;
-}
-
-/* line 12, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.form-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1em;
-}
-
-/* line 19, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-input {
-  display: block;
-  border: 1px solid #201F49;
-  color: #222222;
-  border-radius: 15px;
-  height: 2.5em;
-  width: 95%;
-  outline: none;
-  padding: 0 0.5em;
-  margin: 0.5em 1em;
-}
-
-/* line 29, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-input::placeholder {
-  color: #a2a2a2;
-}
-
-/* line 34, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-input[type="file"] {
-  display: none;
-  color: red;
-}
-
-/* line 40, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.blurred {
-  color: #a2a2a2;
-  font-weight: 400;
-  font-size: 0.9em;
-  margin: 0.5em 1em;
-}
-
-/* line 46, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.center {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  margin: 0;
-  padding: 0;
-}
-
-/* line 55, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.toogle {
-  cursor: pointer;
-  color: #222222;
-}
-
-/* line 58, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.toogle:hover {
-  color: #222222;
-  font-weight: 500;
-}
-
-/* line 64, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.users {
-  margin: auto;
-  border-collapse: collapse;
-  overflow: hidden;
-  overflow-x: auto;
-  text-align: center;
-  vertical-align: center;
-  padding: 0.4em;
-  font-size: 0.8em;
-}
-
-/* line 74, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.users-rules {
-  padding: 2em;
-  list-style: disc;
-}
-
-/* line 77, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.users-rules li {
-  padding-bottom: 1em;
-}
-
-/* line 81, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.signup-message {
-  max-width: 300px;
-  margin: auto;
-}
-
-/* line 84, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.signup-message p {
-  text-align: center;
-}
-
-/* line 88, C:/Users/erd/Desktop/web development/STAcademie/sass/_auth.scss */
-.error {
-  color: red;
-}
-
 /* line 1, C:/Users/erd/Desktop/web development/STAcademie/sass/_home.scss */
 body {
   overflow-x: hidden;
@@ -1196,6 +1082,129 @@ a {
   display: block;
   height: 190px;
   margin: 1rem auto;
+}
+
+/* line 1, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.register {
+  max-width: 600px;
+}
+
+/* line 3, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.register h1,
+.register h2,
+.register h3 {
+  color: #201F49;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* line 12, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.register h1 {
+  margin-top: 1em;
+  font-size: 2em;
+}
+
+/* line 18, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin: 0.5em;
+}
+
+/* line 24, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+label {
+  min-width: 120px;
+  font-weight: bold;
+}
+
+/* line 28, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+input,
+textarea {
+  display: block;
+  border: 1px solid #201F49;
+  color: #222222;
+  border-radius: 15px;
+  height: 2.5em;
+  width: 95%;
+  outline: none;
+  padding: 0 0.5em;
+  margin: 0.5em 1em;
+}
+
+/* line 39, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+input::placeholder,
+textarea::placeholder {
+  color: #bbbbbb;
+}
+
+/* line 43, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.registerCheckbox {
+  display: flex;
+  align-items: center;
+}
+
+/* line 46, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.registerCheckbox input {
+  margin-left: calc(120px + 2em);
+  display: initial;
+  width: auto;
+}
+
+/* line 52, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.message {
+  padding-top: 0.8em;
+  height: 10em;
+}
+
+/* line 57, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+button {
+  margin: .5em auto;
+  padding: 0.5em;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1em;
+  outline: none;
+}
+
+/* line 65, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.signup-message {
+  max-width: 300px;
+  margin: auto;
+}
+
+/* line 68, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.signup-message p {
+  text-align: center;
+}
+
+/* line 72, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.error {
+  color: red;
+}
+
+/* line 76, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+.responseText {
+  margin: auto;
+  margin-bottom: 2em;
+  margin-top: 0em;
+  text-align: center;
+  font-size: 1.2em;
+  color: green;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 576px) {
+  /* line 86, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+  .form-group {
+    flex-wrap: wrap;
+  }
+  /* line 90, C:/Users/erd/Desktop/web development/STAcademie/sass/_register.scss */
+  .registerCheckbox input {
+    margin-left: 2em;
+  }
 }
 
 /*# sourceMappingURL=../src/styles/style.map */

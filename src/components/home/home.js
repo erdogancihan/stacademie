@@ -31,25 +31,30 @@ class Home extends Component {
           showtimeText: "",
           image: Img3
         }
-       
       ]
     };
   }
 
-
   slide = e => {
     if (e.target.id === "left") {
       this.setState({
-        slideIndex: (this.state.slideIndex +2) % 3,
+        slideIndex: (this.state.slideIndex + 2) % 3,
         slideDirection: "slide-left"
       });
     } else if (e.target.id === "right") {
       this.setState({
-        slideIndex: (this.state.slideIndex +1) % 3,
+        slideIndex: (this.state.slideIndex + 1) % 3,
         slideDirection: "slide-right"
       });
     }
+    clearInterval(this.slideTimer)
   };
+
+  slideTimer = setInterval(() => {
+    this.setState({
+      slideIndex: (this.state.slideIndex + 2) % 3,
+      slideDirection: "slide-left"})
+  }, 4000);
 
   render() {
     const classNames = this.state.slideDirection;
@@ -104,7 +109,6 @@ class Home extends Component {
         <ContentFactory link={"home1"} classNames={"home__content"} />
         <Courses strings={strings} lang={lang} />
         <ContentFactory link={"home2"} classNames={"banner1"} />
-     
       </div>
     );
   }
