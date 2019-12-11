@@ -54,7 +54,6 @@ exports.addUserRole = functions.https.onCall((data, context) => {
     });
 });
 
-
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
@@ -77,13 +76,20 @@ exports.sendMail = functions.https.onCall(data => {
   //sends email
 
   const dest = data.email;
+  const arama = data.callme ? "Evet" : "Hayır";
   const mailOptions = {
     from: "staakademie@gmail.com",
-    to: dest,
-    bcc:"erdogancihan@icloud.com",
-    subject: "Schweißtechnik Akademie",
+    to: "info@st-akademie.de",
+    subject: "Schweißtechnik Akademie Kunden Nachricht",
     text: data.message,
-    html: `<p> ${data.message} + ${data.name} + ${data.phoneNumber} </p>`
+    html: ` <div> 
+    <div><h1>Schweißtechnik Akademie</h1></div>
+    <div> <h2>Ad Soyad</h2> <p> ${data.name} </p></div>
+    <div> <h2>Email</h2> <p> <a href= ${data.email}>${data.email} </a> </p></div>
+    <div> <h2>Telefon Numarası</h2> <p> ${data.phoneNumber} </p></div>
+    <div> <h2>Telefonla arayın</h2> <p> ${arama} </p></div>
+    <div> <h2>Mesaj</h2> <p>${data.message}</p></div>
+    </div>`
   };
   return transporter
     .sendMail(mailOptions)
@@ -94,4 +100,3 @@ exports.sendMail = functions.https.onCall(data => {
       return error;
     });
 });
-

@@ -70,7 +70,7 @@ class Register extends Component {
           },
           responseText: this.props.strings.register.success
         });
-        return console.log(resp);
+        return resp;
       })
       .catch(error => {
         console.log(error);

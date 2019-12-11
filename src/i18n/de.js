@@ -84,7 +84,7 @@ export default {
     email: "Ihre E-Mail Adresse",
     telephone: "Ihre Telefonnummer",
     message: "Ihre Nachricht",
-    callme: "Bitte rufen Sie mich unter der oben stehenden Nummmer zurück.",
+    callme: "Bitte rufen Sie mich unter der oben stehenden Nummer zurück.",
     accept:
       "Ich erklare mich damit einverstanden, dass die Schweißtechnik Akademie GmbH meine Angaben speichert und zur Beantwortung meiner Anfrage verwenden darf.",
     send: "Send",
