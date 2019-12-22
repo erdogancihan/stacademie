@@ -7,9 +7,8 @@ import banner from "../../images/logo/logo2.jpg";
 import azav from "../../images/logo/Zz_AZAV_fbg.jpg";
 
 export class FooterContainer extends Component {
-
   toggleClass = () => {
-     const dropDownContent = document.querySelectorAll(".dropdown-content");
+    const dropDownContent = document.querySelectorAll(".dropdown-content");
     dropDownContent.forEach(item => {
       return item.classList.value !== "dropdown-content drop"
         ? () => {
@@ -20,6 +19,8 @@ export class FooterContainer extends Component {
   };
   render() {
     const { strings, language } = this.props;
+    let date = new Date();
+    let year = date.getFullYear();
     return (
       <footer className="notranslate">
         <ul className="footer-nav">
@@ -34,9 +35,9 @@ export class FooterContainer extends Component {
             </Link>
           </li>
           <li>
-          <div>
-            <img className="footer-azav" src={azav} alt="Azav" />
-          </div>
+            <div>
+              <img className="footer-azav" src={azav} alt="Azav" />
+            </div>
           </li>
         </ul>
         <div className="footer-info">
@@ -58,7 +59,7 @@ export class FooterContainer extends Component {
             </div>
             <div className="telephone">
               <p>
-                <a href="www.st-akademie.de">www.st-akademie.de</a>
+                <a href="https://st-akademie.de"> st-akademie.de</a>
               </p>
               <p>
                 <a href="mailto:info@st-akademie.de">
@@ -68,13 +69,17 @@ export class FooterContainer extends Component {
             </div>
           </div>
         </div>
-        <p> &copy; 2019 Schweißtechnik Akademie GmbH All Rights Reserved.</p>
+        <p>
+          &copy;
+          {" " + year + " "}
+          Schweißtechnik Akademie GmbH All Rights Reserved.
+        </p>
       </footer>
     );
   }
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = state => {
   return {
     language: state.language.language,
     user: state.firestore.data.user,

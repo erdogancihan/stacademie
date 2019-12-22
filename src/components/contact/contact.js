@@ -31,6 +31,7 @@ class Contact extends Component {
                 map: map,
                 title: 'Schweiß Technik Akademie'
               });
+              return marker
             }}
           />
           <address className="contact ">

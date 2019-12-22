@@ -8,6 +8,7 @@ import Img1 from "../../images/banners/banner1.jpg";
 import Img2 from "../../images/banners/banner2.jpg";
 import Img3 from "../../images/banners/banner3.jpg";
 
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -33,6 +34,10 @@ class Home extends Component {
         }
       ]
     };
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.slideTimer)
   }
 
   slide = e => {

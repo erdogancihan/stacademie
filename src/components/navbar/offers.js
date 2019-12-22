@@ -19,7 +19,7 @@ class Offers extends Component {
     //console.log(dropdownContent);
     for (let i = 0; i < 2; i++) {
       if (shrinkContent[i].id !== dropdownContent.id) {
-        console.log(shrinkContent[i].id);
+        //console.log(shrinkContent[i].id);
         shrinkContent[i].classList.remove("drop");
       }
     }

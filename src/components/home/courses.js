@@ -9,20 +9,24 @@ import img8 from "../../images/offers/Resim22.jpg";
 import img9 from "../../images/offers/Resim20.jpg";
 import img10 from "../../images/offers/Resim23.jpg";
 
-
 function Courses({ strings, lang }) {
   const offersArray = Object.keys(strings.offers).map(i => strings.offers[i]);
-const images=[img1,img2,img3,img6,img7,img8,img9,img10,]
+
+  const images = [img1, img2, img3, img6, img7, img8, img9, img10];
+
   return (
     <section className="container">
       <h1 className="courses__title">{strings.navbar.offers}</h1>
 
       <div className="courses">
-        {offersArray.map((module, index) => {
+        {offersArray.map((module,index) => {
+          const moduleLink = Object.keys(strings.offers)[
+            Object.values(strings.offers).indexOf(module)
+          ];
           return (
             <Module
-              index={index}
-              key={index}
+              key={moduleLink}
+              moduleLink={moduleLink}
               module={module}
               lang={lang}
               img={images[index]}
